@@ -1,0 +1,38 @@
+ion-avatar {
+  width: 100%;
+  height: auto;
+}
+ion-icon {
+  font-size: 1vw;
+}
+.icn_clicked {
+  color: var(--main-color);
+  stroke: var(--main-color);
+  font-size: calc(1em + 10vw);
+  margin-top: -15px;
+}
+.icn_normal {
+  color: #424242;
+  stroke: #424242;
+  font-size: calc(1em + 7vw);
+  margin-top: 0;
+}
+ion-tab-bar {
+  contain: none;
+}
+.menu-borde-in {
+  background-color: var(--main-color);
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  display: block !important;
+  z-index: 9999 !important;
+}
+.menu-borde-out {
+  background-color: transparent;
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  display: block !important;
+  z-index: 9999 !important;
+}

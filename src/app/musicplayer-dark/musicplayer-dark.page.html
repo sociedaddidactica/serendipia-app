@@ -1,0 +1,107 @@
+<ion-content>
+  <div class="div-top">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" class="align-left">
+          <ion-button class="back-button" (click)="goBack()">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="section_id">
+          <ion-icon [src]="this.section_icon" class="icon-section"></ion-icon>
+          <div id="name_section_player" class="name-section"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="div-bottom">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col>
+          <ion-card class="card-audio">
+            <ion-card-content>
+              <ion-list *ngIf="files.length">
+                <ng-container *ngFor="let track of files; let i = index">
+                  <ion-item-divider class="items-track">
+                    <ion-button slot="start" class="btn-icon" (click)="openFile(track, i, track.name)">
+                      <ion-icon slot="icon-only" name="caret-forward-outline"></ion-icon>
+                    </ion-button>
+                    <p>
+                      <iont-text color="dark" [innerHTML]="track.name"> </iont-text> <br> <small color="medium" [id]="i"
+                        *ngIf="track.duration == -1">--:--</small> <small color="medium" [id]="i"
+                        *ngIf="track.duration != -1" [innerHTML]="this.formatTime(track.duration * 1000, 'mm:ss')"></small>
+                    </p>
+                  </ion-item-divider>
+                </ng-container>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid> <!-- Reproductor  -->
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar *ngIf="show_toolbar">
+    <div class="controls">
+      <div class="title-track">
+        <ion-text color="principal" [innerHtml]="current_track_title"></ion-text>
+      </div>
+      <div class="rangePlaytime">
+        <ion-label class="startTime" color="light">{{ state.time }}</ion-label>
+        <ion-label class="endTime" id="show_duration" color="light" *ngIf="state.duration == -1">--:--</ion-label>
+        <ion-label class="endTime" id="show_duration" color="light" *ngIf="state.duration != -1">{{ formatTime(currentFile.file.duration * 1000, 'mm:ss') }}
+        </ion-label>
+      </div>
+      <ion-range id="time-range" min="0" max="{{state.durationSec}}" [(ngModel)]="seekbar" (ionFocus)="onSeekStart()"
+        (ionBlur)="onSeekEnd()"></ion-range>
+      <div class="rangeChangetime">
+        <ion-button slot="start" [disabled]="!state.playing" (click)="controlSeconds('back', 30)">
+          <ion-icon src="/assets/ICONS/rewind-time.svg"></ion-icon>
+        </ion-button>
+        <ion-button slot="end" [disabled]="!state.playing" (click)="controlSeconds('forward', 30)">
+          <ion-icon src="/assets/ICONS/forward-time.svg"></ion-icon>
+        </ion-button>
+      </div> <br>
+      <ion-grid>
+        <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 100%">
+          <ion-col>
+            <!-- Rewinds -->
+            <ion-button [disabled]="!state.playing" (click)="controlSeconds('back', 15)">
+              <ion-icon src="/assets/ICONS/rewind.svg" color></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <!-- Backwards -->
+            <ion-button [disabled]="isFirstPlaying()" (click)="previous()">
+              <ion-icon src="/assets/ICONS/back.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <!-- Play/Pause -->
+            <ion-fab-button class="play-pause-btn" (click)="play()" *ngIf="!state.playing">
+              <ion-icon name="play"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button class="play-pause-btn" (click)="pause()" *ngIf="state.playing">
+              <ion-icon name="pause"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+          <ion-col>
+            <!-- Forwards -->
+            <ion-button [disabled]="isLastPlaying()" (click)="next()">
+              <ion-icon src="/assets/ICONS/next.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <!-- Fast Forwards -->
+            <ion-button [disabled]="!state.playing" (click)="controlSeconds('forward', 15)">
+              <ion-icon src="/assets/ICONS/fast-forward.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-toolbar>
+</ion-footer>

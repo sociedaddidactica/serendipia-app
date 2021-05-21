@@ -1,0 +1,118 @@
+ion-content{
+    --background: url("/assets/INTRODUCCION/inicio.jpg") no-repeat center center / cover;
+}
+.img-header{
+    width: 50%;
+    height: 50%
+}
+.grid-header{
+    height: 10%;
+}
+.grid-central{
+    width: 65%;
+    align-items: center !important;
+}
+.row-titulo{
+    height:100% !important;
+    width: 100% !important;
+    margin: 20% 0 5% 0 !important;
+}
+.row-titulo .titulo-img{
+    width: 80%;
+    height: 80%;
+    min-width: 80%;
+    min-height: 80%;
+}
+.row-avatar{
+    height:100% !important;
+    width: 100% !important;
+}
+.content-camera {
+    position: relative;
+    // display: block;
+    
+}
+.content-photo{
+    border: 1px solid var(--main-color)  !important;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative; 
+    left: 0px; 
+    top: 0;
+}
+.ionfab{
+    position: absolute; 
+    left: 60px; 
+    top: 55px;
+}
+
+.img-perfil {
+    border: 1px solid var(--main-color)  !important;
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50px !important;
+}
+
+.style-transparent{
+    --ion-background-color: transparent !important;
+}
+.custom-ion-input  {
+    width: 100%;
+    border-bottom: 1px solid var(--main-color) !important;
+    color: var(--main-color);
+}
+.custom-ion-datetime {
+    width: 100%;
+    border-bottom: 1px solid var(--main-color) !important;
+    background-color: transparent !important;
+    color: var(--main-color);
+}
+.custom-select-opcion,  .custom-ion-select{
+    background-color: transparent !important;
+    color: var(--main-color);
+}
+.custom-ion-label{
+    color: white !important;
+    opacity: .255;
+}
+.btn-turquesa{
+    color: black !important;
+    background-color: var(--main-color) !important;
+    border-radius: 60px;
+    border: 2px solid var(--main-color);
+    // margin-top: 10%;
+    text-transform: none;
+}
+.row-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    margin-top: 10%;
+}
+a {
+    color: white !important;
+    text-decoration: none;
+}
+.lbl_danger{
+    margin-left: 10% !important;
+    color: #eb445a;
+    font-size: smaller;
+}
+.my-checkbox {
+    display: flex;
+    align-items: center;
+}
+.my-alert {
+    --background: var(--ion-color-principal);
+}
+ 
+.alert-btn-camera {
+    background: green !important;
+    color: black;
+}
+.alert-btn-gallery{
+    background: red !important;
+    color: black;
+}

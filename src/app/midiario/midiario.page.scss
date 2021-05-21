@@ -1,0 +1,105 @@
+ion-item {
+  --ion-background-color: white !important;
+  margin: 0 0 5% 0;
+}
+.img-header {
+  width: 50%;
+  height: 50%;
+}
+.grid-header {
+  height: 10% !important;
+}
+.grid-central {
+  width: 55vw;
+}
+.row-titulo {
+  height: 20vh;
+}
+.row-titulo h1 {
+  padding-top: 1vh;
+  color: var(--main-color);
+  width: 100%;
+}
+ion-card {
+  --background: #413b3b7e;
+  border-color: var(--main-color);
+  border-width: 0.1em;
+  border-style: solid;
+  border-radius: 20px;
+}
+ion-card ion-card-content {
+  height: 12vh;
+  --background: none !important;
+  text-align: center;
+}
+ion-card ion-card-content ion-icon {
+  font-size: 20vw;
+}
+ion-card ion-card-title {
+  height: 6vh;
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+ion-card ion-card-title ion-text {
+  margin: 0 auto;
+}
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-ldpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-mdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-tvdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-hdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-xhdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-xxhdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/MIDIARIO/background-xxxhdpi.jpg") no-repeat
+      center center / cover;
+  }
+}

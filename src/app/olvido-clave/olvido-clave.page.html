@@ -1,0 +1,41 @@
+<ion-content>
+    <ion-grid class="grid-header" fixed="true">
+        <ion-row  class="align-right" fixed>
+            <ion-col>
+               <div><img class="img-header" src="/assets/LOGO/logo-interno.png"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="grid-central">
+        <ion-row class="row-titulo" fixed>
+            <ion-col class="align-center"><br>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-text color="medium"><p>Por favor, indica el correo electrónico usado para registrarte en Serendipia.</p></ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="frm-padding">
+                <form [formGroup]="frm_recovery" (ngSubmit)="enviar_datos()">
+                    <ion-item lines="none" class="style-transparent">
+                        <ion-label class="custom-ion-label" position="stacked">Correo electrónico</ion-label>
+                        <ion-input formControlName="email_recovery" id="email_recovery" class="custom-ion-input" type="text" required></ion-input>
+                    </ion-item>
+                    <ion-label class="lbl_danger" *ngIf="frm_recovery.get('email_recovery').errors?.required && (frm_recovery.get('email_recovery').touched)">* El Correo electrónico es obligatorio </ion-label>
+                    
+                    <ion-row class="row-button">
+                        <ion-col>
+                            <ion-icon color="light" name="chevron-back-outline"></ion-icon>
+                            <a routerLink="/sesion" routerDirection="back" class="a-white">Atrás</a>
+                        </ion-col>
+                        <ion-col class="align-right">
+                            <ion-button type="submit" [disabled]="frm_recovery.invalid" shape="round" color="main-color" class="btn-turquesa lbl-sentence-style">Enviar</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-col>  
+        </ion-row>
+    </ion-grid>
+</ion-content>

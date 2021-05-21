@@ -1,0 +1,83 @@
+ion-content {
+    --background: url("/assets/INTRODUCCION/inicio.jpg") no-repeat center center / cover;
+}
+
+ion-item {
+    --ion-background-color: white !important;
+    margin: 0 0 5% 0;
+}
+
+.img-header{
+    width: 50%;
+    height: 50%
+}
+.grid-header{
+    height: 10% !important;
+}
+.grid-central{
+    width: 65%;
+    align-items: center !important;
+}
+.row-titulo{
+    height:100% !important;
+    width: 100% !important;
+    margin: 20% 0 20% 0 !important;
+}
+.row-titulo .titulo-img{
+    width: 80%;
+    height: 80%;
+    min-width: 80%;
+    min-height: 80%;
+}
+ion-avatar{
+    border: 1px solid var(--main-color)  !important;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10%;
+}
+
+ion-input {
+    width: 100%;
+    border-bottom: 1px solid var(--main-color) !important;
+    color: var(--main-color);
+}
+ion-checkbox{
+    border: 1px solid var(--main-color) !important;
+    margin-left: 5%;
+}
+ion-label{
+    color: white !important;
+    opacity: .255;
+}
+.btn-turquesa{
+    color: black !important;
+    background-color: var(--main-color) !important;
+    border-radius: 60px;
+    border: 2px solid var(--main-color);
+    // margin-top: 10%;
+    text-transform: none;
+}
+.row-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 10%;
+}
+.a-white {
+    color: white !important;
+    text-decoration: none;
+}
+.a-medium {
+    color:grey !important;
+    // text-decoration: none;
+    font-size: smaller;
+}
+
+.style-transparent{
+    --ion-background-color: transparent !important;
+}
+
+.frm-padding {
+    padding-top: 25%;
+}

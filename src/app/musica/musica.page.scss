@@ -1,0 +1,116 @@
+.div-header {
+  background: linear-gradient(to right, #04c1cc, #29a6d1);
+  height: 30vh;
+  margin-bottom: -7vh;
+  border: none !important;
+  border-bottom-color: transparent !important;
+  border-bottom: none !important;
+  border-radius: 0px 0px 40px 40px;
+  display: flex;
+}
+.div-header h1 {
+  justify-content: center !important;
+  text-align: center;
+  padding-top: 10vh;
+  color: white;
+  width: 100%;
+}
+.ion-card-1 {
+  --background: url("/assets/MUSICA/1.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.ion-card-2 {
+  --background: url("/assets/MUSICA/2.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.ion-card-3 {
+  --background: url("/assets/MUSICA/3.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.ion-card-4 {
+  --background: url("/assets/MUSICA/4.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.ion-card-5 {
+  --background: url("/assets/MUSICA/5.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.ion-card-6 {
+  --background: url("/assets/MUSICA/6.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+ion-card ion-card-content {
+  height: 15vh;
+}
+ion-card ion-card-title {
+  height: 6vh;
+  background-color: #dce8ef;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+ion-card ion-card-title ion-text {
+  margin: 0 auto;
+}
+ion-grid {
+  width: 90vw;
+}
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-ldpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-mdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-tvdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-hdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-xhdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-xxhdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/MUSICA/background-xxxhdpi.jpg") no-repeat center
+      center / cover;
+  }
+}

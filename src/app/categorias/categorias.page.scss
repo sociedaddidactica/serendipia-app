@@ -1,0 +1,104 @@
+.div-header {
+  background: linear-gradient(to right, #04c1cc, #29a6d1);
+  height: 30%;
+  margin-bottom: -25%;
+  border: none !important;
+  border-bottom-color: transparent !important;
+  border-bottom: none !important;
+  border-radius: 0px 0px 40px 40px;
+  display: flex;
+}
+.div-header h1 {
+  justify-content: center !important;
+  text-align: center;
+  padding-top: 10%;
+  color: white;
+  width: 100%;
+}
+.ion-card-ansiedad {
+  --background: url("/assets/CATEGORIAS/ansiedad.png") no-repeat center center /
+    cover;
+  border-radius: 15px;
+}
+.ion-card-meditacion {
+  --background: url("/assets/CATEGORIAS/meditacion.png") no-repeat center center /
+    cover;
+  border-radius: 15px;
+}
+.ion-card-hipnosis {
+  --background: url("/assets/CATEGORIAS/hipnosis.png") no-repeat center center /
+    cover;
+  border-radius: 15px;
+}
+ion-card ion-card-content {
+  height: 120px;
+}
+ion-card ion-card-title {
+  height: 30px;
+  background-color: #dce8ef;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: small;
+  padding-top: 7px;
+}
+ion-grid {
+  --ion-grid-padding-xs: 5%;
+  width: 70%;
+}
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-ldpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-mdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-tvdpi.jpg") no-repeat
+      center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-hdpi.jpg") no-repeat center
+      center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-xhdpi.jpg") no-repeat
+      center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-xxhdpi.jpg") no-repeat
+      center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/background-xxxhdpi.jpg") no-repeat
+      center center / cover;
+  }
+}

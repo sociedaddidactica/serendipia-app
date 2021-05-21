@@ -1,0 +1,63 @@
+ion-content {
+  --background: url("/assets/INTRODUCCION/sesion.jpg") no-repeat center center/cover;
+}
+.my-grid {
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0%;
+  padding: 0%;
+}
+.parent-row {
+  height: 100% !important;
+  justify-content: center !important;
+  display: flex;
+  align-items: flex-end !important;
+}
+.row-botones {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0%;
+  margin: 2%;
+}
+ion-label {
+  position: "fixed" !important;
+  color: "transparent" !important;
+}
+ion-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 40vw;
+  height: auto;
+  align-items: center !important;
+  margin: 0 auto;
+  z-index: 1;
+  padding-bottom: 8vh;
+}
+ion-label.lbl_subtitle {
+  font-size: larger;
+  position: absolute !important;
+  text-align: center !important;
+  opacity: 80%;
+}
+.grid-logo {
+  height: 40vh !important;
+  width: 50vw !important;
+}
+.grid-subtitle {
+  height: 10% !important;
+  width: 80% !important;
+  align-items: center !important;
+}
+.grid-botones {
+  height: 50% !important;
+  width: 80% !important;
+}
+.button-menu {
+  min-width: 100%;
+  color: white;
+}
+a {
+  color: white !important;
+  text-decoration: none;
+}

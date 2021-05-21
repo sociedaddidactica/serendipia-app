@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid class="grid-header" fixed="true">
+    <ion-row class="align-right" fixed>
+      <ion-col>
+        <div><img class="img-header" src="/assets/LOGO/logo-interno.png"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-central">
+    <ion-row class="row-titulo" fixed>
+      <ion-col class="align-center">
+        <h1>Mi diario</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card type="button" (click)="goTo('cuaderno')">
+          <ion-card-content>
+            <ion-icon src="/assets/ICONS/cuaderno.svg"></ion-icon>
+          </ion-card-content>
+          <ion-card-title>
+            <ion-text>Cuaderno</ion-text>
+          </ion-card-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card type="button" (click)="goTo('habla')">
+          <ion-card-content>
+            <ion-icon src="/assets/ICONS/habla-positivo.svg"></ion-icon>
+          </ion-card-content>
+          <ion-card-title>
+            <ion-text>Habla positivo</ion-text>
+          </ion-card-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

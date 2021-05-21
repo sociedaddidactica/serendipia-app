@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-tabs (ionTabsWillChange)="tabChange($event)">
+    <ion-tab-bar slot="bottom" color="principal">
+      <div id="parati" [ngClass]="activeParatTi ? 'menu-borde-in' : 'menu-borde-out' ">
+        <ion-tab-button (click)="onClick('parati')">
+          <ion-icon id="item1" src="/assets/ICONS/tab-bar-buttons/menu-item-1-circle.svg" [ngClass]="activeParatTi
+            ? 'icn_clicked' : 'icn_normal' "> </ion-icon>
+        </ion-tab-button>
+      </div>
+      <div id="categorias" [ngClass]="activeCategorias ? 'menu-borde-in' : 'menu-borde-out' ">
+        <ion-tab-button (click)="onClick('categorias')">
+          <ion-icon id="item2" src="/assets/ICONS/tab-bar-buttons/menu-item-2-circle.svg"
+            [ngClass]="activeCategorias ? 'icn_clicked' : 'icn_normal' "></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div id="musica" [ngClass]="activeMusica ? 'menu-borde-in' : 'menu-borde-out' ">
+        <ion-tab-button (click)="onClick('musica')">
+          <ion-icon id="item3" src="/assets/ICONS/tab-bar-buttons/menu-item-3-circle.svg" [ngClass]="activeMusica
+            ? 'icn_clicked' : 'icn_normal' "> </ion-icon>
+        </ion-tab-button>
+      </div>
+      <div id="diario" [ngClass]="activeDiario ? 'menu-borde-in' : 'menu-borde-out' ">
+        <ion-tab-button (click)="onClick('diario')">
+          <ion-icon id="item4" src="/assets/ICONS/tab-bar-buttons/menu-item-4-circle.svg" [ngClass]="activeDiario
+            ? 'icn_clicked' : 'icn_normal' "> </ion-icon>
+        </ion-tab-button>
+      </div>
+      <div id="info" [ngClass]="activeInfo ? 'menu-borde-in' : 'menu-borde-out' ">
+        <ion-tab-button (click)="onClick('info')">
+          <ion-icon id="item5" src="/assets/ICONS/tab-bar-buttons/menu-item-5-circle.svg" [ngClass]="activeInfo
+            ? 'icn_clicked' : 'icn_normal' "> </ion-icon>
+        </ion-tab-button>
+      </div>
+      <div id="config" [ngClass]="activeConfig ? 'menu-borde-in' : 'menu-borde-out' ">
+        <ion-tab-button (click)="onClick('config')">
+          <ion-icon id="item6" src="/assets/ICONS/tab-bar-buttons/menu-item-6-circle.svg" [ngClass]="activeConfig
+            ? 'icn_clicked' : 'icn_normal' "> </ion-icon>
+        </ion-tab-button>
+      </div>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

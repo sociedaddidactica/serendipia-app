@@ -1,0 +1,8 @@
+{
+  "name": "SerendipiaAPP",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

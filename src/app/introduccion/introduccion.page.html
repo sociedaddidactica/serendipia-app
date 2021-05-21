@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-grid class="grid-logo" fixed="true" scroll="false">
+    <ion-row class="parent-row">
+      <ion-col size="12">
+        <ion-img src="/assets/LOGO/logo-tranparente.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-subtitle" scroll="false">
+    <ion-row>
+      <ion-col>
+        <ion-label class="lbl_subtitle" color="light">¿En qué áreas de tu vida quieres mejorar y crecer?</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-botones" scroll="false">
+    <ion-row class="row-botones">
+      <ion-item *ngFor="let prefer of preferences" color="transparent" class="button-menu">
+        <ion-label class="lbl-sentence-style"> {{prefer.name}}</ion-label>
+        <ion-toggle [(ngModel)]="prefer.isChecked" [name]="prefer.id" [checked]="prefer.isChecked" color="light"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <ion-row class="align-right">
+      <ion-col>
+        <a (click)="goToRegistro()" class="small-text">Finalizar</a>
+        <ion-icon color="light" name="chevron-forward-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+ </ion-grid>
+</ion-content>

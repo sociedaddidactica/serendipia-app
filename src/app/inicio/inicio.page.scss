@@ -1,0 +1,34 @@
+ion-content{
+    --background: url("/assets/INTRODUCCION/entrada.jpg") no-repeat center center/cover;
+}
+
+ion-img{
+    max-width: 50%;
+    max-height:30%;
+    align-items: center !important;
+    margin: 0%;
+}
+
+.my-grid {
+    height: 100% !important;
+    width: 100% !important;   
+}
+
+.parent-row1 {
+    height: 90% !important;
+    justify-content: center !important;
+    display: flex;
+    align-items: center !important;
+    padding: 0;
+}
+.parent-row2 {
+    height: 10% !important;
+    justify-content: center !important;
+    display: flex;
+    align-items: center !important;
+}
+.parent-col {
+    justify-content: center !important;
+    display: flex;
+    align-items: center !important;
+}

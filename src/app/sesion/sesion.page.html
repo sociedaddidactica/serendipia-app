@@ -1,0 +1,46 @@
+<ion-content>
+    <ion-grid class="grid-header" fixed="true">
+        <ion-row  class="align-right" fixed>
+            <ion-col>
+               <div><img class="img-header" src="/assets/LOGO/logo-interno.png"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+    <ion-grid class="grid-central">
+        <ion-row class="row-titulo" fixed>
+            <ion-col class="align-center">
+                <img class="titulo-img" src="/assets/LOGO/RECURSO2.png">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="frm-padding">
+                <form [formGroup]="frm_login" (ngSubmit)="login()">
+                    <ion-item lines="none" class="style-transparent">
+                        <ion-label position="stacked">Usuario</ion-label>
+                        <ion-input formControlName="user" type="text" required></ion-input>
+                    </ion-item>
+                    <ion-item lines="none" class="style-transparent">
+                        <ion-label position="stacked" class="style-transparent">Contraseña</ion-label>
+                        <ion-input formControlName="pass" type="password"></ion-input>
+                    </ion-item>
+                    <ion-row>
+                        <ion-col class="ion-text-end">
+                            <a routerLink="/olvido-clave" class="a-medium">¿Olvidaste tu contraseña?</a>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="row-button">
+                        <ion-col>
+                            <ion-icon color="light" name="chevron-back-outline"></ion-icon>
+                            <a routerLink="/subinicio" routerDirection="back" class="a-white">Atrás</a>
+                        </ion-col>
+                        <ion-col class="align-right">
+                            <ion-button type="submit" [disabled]="frm_login.invalid" shape="round" color="main-color" class="btn-turquesa lbl-sentence-style">Entrar</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-col>  
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

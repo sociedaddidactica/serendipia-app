@@ -1,0 +1,97 @@
+<ion-content fullscreen="true" fixed>
+    <ion-grid class="grid-header" fixed="true">
+        <ion-row class="align-right" fixed>
+            <ion-col>
+                <div>
+                    <img class="img-header" src="/assets/LOGO/logo-interno.png" />
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="grid-central">
+        <ion-row class="row-titulo" fixed>
+            <ion-col class="align-center">
+                <img class="titulo-img" src="/assets/LOGO/RECURSO2.png" />
+            </ion-col>
+        </ion-row>
+        
+        <ion-row class="row-avatar">
+            <ion-col class="align-center">
+                <div class="content-camera">
+                    <div class="content-photo">
+                        <img id="profilePic" class="img-perfil" [src]="photoService.photos.webviewPath">
+                    </div>
+                    <ion-fab-button (click)="presentAlertConfirm()" size="small" class="ionfab" color="secondary">
+                        <ion-icon name="camera"></ion-icon>
+                    </ion-fab-button>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+            <form [formGroup]="frm_usuario" (ngSubmit)="guardarDatos()">
+            <ion-item lines="none" class="style-transparent">
+                <ion-label class="custom-ion-label" position="stacked">Nombre y Apellido</ion-label>
+                <ion-input formControlName="nombre_apellido" class="custom-ion-input" type="text" required></ion-input>
+            </ion-item>
+            <ion-label class="lbl_danger"  *ngIf="frm_usuario.get('nombre_apellido').errors && frm_usuario.get('nombre_apellido').touched">* El nombre es obligatorio </ion-label>
+            
+            <ion-item lines="none" class="style-transparent">
+                <ion-label class="custom-ion-label" position="stacked">Fecha de nacimiento</ion-label>
+                <ion-datetime formControlName="f_nacimiento" class="custom-ion-datetime" color="principal"
+                                monthShortNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre" 
+                                displayFormat="DD/MM/YYYY" 
+                                pickerFormat="DD MMM YYYY" 
+                                cancelText="Cancelar"
+                                doneText="Ok"
+                                required>
+                </ion-datetime>
+            </ion-item>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('f_nacimiento').errors?.required && (frm_usuario.get('f_nacimiento').touched)">* La fecha de nacimiento es obligatoria </ion-label>
+            
+            <ion-item lines="none" class="style-transparent">
+                <ion-label class="custom-ion-label" position="stacked">Género</ion-label>
+                <ion-select formControlName="genero" class="custom-ion-select" placeholder="Seleccione" cancelText="Cancelar" interface="popover">
+                    <ion-select-option value="f">Femenino</ion-select-option>
+                    <ion-select-option value="m">Masculino</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('genero').errors?.required && (frm_usuario.get('genero').touched)">* El género es obligatoria </ion-label>
+            
+            <ion-item lines="none" class="style-transparent">
+                <ion-label class="custom-ion-label" position="stacked">Correo electrónico</ion-label>
+                <ion-input formControlName="email" class="custom-ion-input" type="text" required></ion-input>
+            </ion-item>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('email').errors?.required && (frm_usuario.get('email').touched)">* El Correo electrónico es obligatorio </ion-label>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('email').errors?.email && (frm_usuario.get('email').touched)">* El Correo electrónico no es válido.</ion-label>
+            
+            <ion-item lines="none" class="style-transparent">
+                <ion-label class="custom-ion-label" position="stacked">Usuario</ion-label>
+                <ion-input formControlName="usuario" class="custom-ion-input" type="text" required></ion-input>
+            </ion-item>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.required && (frm_usuario.get('usuario').touched)">* El usuario es obligatorio </ion-label>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.minlength && (frm_usuario.get('usuario').touched)">* El usuario tiene que tener al menos 6 caracteres.</ion-label>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.maxlength && (frm_usuario.get('usuario').touched)">* El usuario tiene que tener como máximo 16 caracteres.</ion-label>
+            
+            <ion-item lines="none" class="style-transparent">
+                <ion-label class="custom-ion-label" position="stacked">Contraseña</ion-label>
+                <ion-input formControlName="contrasena" type="password" class="custom-ion-input" required></ion-input>
+            </ion-item>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('contrasena').errors?.required && (frm_usuario.get('contrasena').touched)">* La contraseña es obligatorio </ion-label>
+            <!-- Botones -->
+            <ion-row class="row-button">
+                <ion-col>
+                    <ion-icon color="light" name="chevron-back-outline"></ion-icon>
+                    <a routerLink="/subinicio" routerDirection="back" class="small-text">Atrás</a>
+                </ion-col>
+                <ion-col class="align-right">
+                    <ion-button type="submit" [disabled]="frm_usuario.invalid" shape="round" color="principal" class="btn-turquesa lbl-sentence-style">
+                        Registrar</ion-button>
+                </ion-col>
+            </ion-row>
+        </form>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

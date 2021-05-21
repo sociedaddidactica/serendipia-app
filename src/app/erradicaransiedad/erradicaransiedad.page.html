@@ -1,0 +1,75 @@
+<ion-content>
+  <div class="div-top">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="2">
+          <ion-button class="back-button" (click)="goBack()">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="10">
+          <h1>Metodo para erradicar <br> la <b>Ansiedad</b></h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12"><iframe [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="div-bottom">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card class="card-left " (click)="goTo('audios_semanales')">
+            <ion-item class="item-menu">
+              <ion-button>
+                <ion-icon src="/assets/ICONS/icon-audifonos.svg"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-card-content>
+              <ion-text color="dark">Audios semanales</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card class="card-right" (click)="goTo('meditacion')">
+            <ion-item class="item-menu">
+              <ion-button>
+                <ion-icon src="/assets/ICONS/icon-meditacion_guiada.svg"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-card-content>
+              <ion-text color="dark">Meditación guiada</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="card-bottom">
+        <ion-col size="6">
+          <ion-card class="card-left" (click)="goTo('tla')">
+            <ion-item class="item-menu">
+              <ion-button>
+                <ion-icon src="/assets/ICONS/icon-TLA.svg"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-card-content>
+              <ion-text color="dark">Tu lugar apartado TLA</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card class="card-right" (click)="goTo('ejercicios')">
+            <ion-item class="item-menu">
+              <ion-button>
+                <ion-icon src="/assets/ICONS/icon-ejercicios.svg"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-card-content>
+              <ion-text color="dark">Ejercicios corporales</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

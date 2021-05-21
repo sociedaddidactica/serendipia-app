@@ -1,0 +1,22 @@
+<ion-content>
+    <ion-grid class="grid-logo"  fixed="true" scroll="false">
+        <ion-row class="parent-row">
+            <ion-col class="parent-row" size="12" sizeLg="4" sizeXL="3" sizeMd="4" sizeSm="6">
+                <ion-img src="/assets/LOGO/logo-tranparente.png"></ion-img> 
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="grid-botones"  fixed="true" scroll="false">
+        <ion-row class="row-botones">
+            <ion-button class="button-menu" color="light" (click)="goToLogin()" shape="round">
+                <ion-label class="lbl-sentence-style" color="secondary">Iniciar sesión</ion-label>
+            </ion-button>
+        </ion-row>
+        <ion-row class="row-botones">
+            <ion-button class="button-menu" color="light" fill="outline" (click)="goToRegister()"  shape="round">
+                <ion-label class="lbl-sentence-style">Registrarse</ion-label>
+            </ion-button>            
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
