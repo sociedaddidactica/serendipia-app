@@ -68,6 +68,10 @@ const routes: Routes = [
           loadChildren: () => import('../editor/editor.module').then( m => m.EditorPageModule)
         },
         {
+          path: 'hablapositivo',
+          loadChildren: () => import('../hablapositivo/hablapositivo.module').then( m => m.HablapositivoPageModule)
+        },
+        {
           path: 'informacion',
           loadChildren: () => import('../informacion/informacion.module').then( m => m.InformacionPageModule)
         },

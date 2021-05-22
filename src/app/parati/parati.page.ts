@@ -15,16 +15,30 @@ export class ParatiPage implements OnInit {
               private router: Router) { }
 
   goTo(page) {
+    let versionApp = localStorage.getItem("version_app");
+
     switch (page) {
         case 'ansiedad':
+          if (versionApp == "PENDIENT"){
+            this.router.navigate(['/main/configuracion']);
+          } else {
             this.router.navigate(['/main/erradicaransiedad']);
-            break;
+          }
+          break;
         case 'meditacion':
+          if (versionApp == "PENDIENT"){
+            this.router.navigate(['/main/configuracion']);
+          } else {
             this.router.navigate(['/main/meditacion']);
-            break;
+          }
+          break;
         case 'diario':
+          if (versionApp == "PENDIENT"){
+            this.router.navigate(['/main/configuracion']);
+          } else {
             this.router.navigate(['/main/midiario']);
-            break;
+          }
+          break;
         default:
             break;
     } 

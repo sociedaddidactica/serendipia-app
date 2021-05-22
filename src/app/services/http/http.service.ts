@@ -7,6 +7,7 @@ import { Photo } from '../photo/photo.service';
   providedIn: 'root',
 })
 export class HttpService {
+  
   url_base = 'https://serendipias.app/apirestful_serendipia/v1';
 
   constructor(public http: HttpClient, private transfer: FileTransfer) {}
@@ -167,28 +168,19 @@ export class HttpService {
       return this.http.get(url, options).toPromise();
   }
 
-  getNotes(id_user) {
-    let httpParams = new HttpParams().append('id_user', id_user);
+  updateAccess(id_usuario){
+    let httpParams = new HttpParams()
+      .append('id_usuario', id_usuario);
+    
     const options = {
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        params: httpParams,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
     };
-    const url = this.url_base + '/getnotes';
-    return this.http.get(url, options).toPromise();
-  }
 
-  getContentNote(id_note) {
-    let httpParams = new HttpParams().append('id_note', id_note);
-    const options = {
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        params: httpParams,
-    };
-    const url = this.url_base + '/getcontentnote';
-    return this.http.get(url, options).toPromise();
+    const url = this.url_base + '/updateaccess';
+    return this.http.post(url, httpParams, options).toPromise();
   }
 
   saveInteraction(datos) {
@@ -213,6 +205,30 @@ export class HttpService {
     return this.http.post(url, httpParams, options).toPromise();
   }
 
+  getNotes(id_user) {
+    let httpParams = new HttpParams().append('id_user', id_user);
+    const options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        params: httpParams,
+    };
+    const url = this.url_base + '/getnotes';
+    return this.http.get(url, options).toPromise();
+  }
+
+  getContentNote(id_note) {
+    let httpParams = new HttpParams().append('id_note', id_note);
+    const options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        params: httpParams,
+    };
+    const url = this.url_base + '/getcontentnote';
+    return this.http.get(url, options).toPromise();
+  }
+
   saveNote(datos) {
     const param1: string = datos.id_nota;
     const param2: string = datos.texto;
@@ -233,6 +249,38 @@ export class HttpService {
     const url = this.url_base + '/savenote';
 
     return this.http.post(url, httpParams, options).toPromise();
+  }
+
+  deleteNote(datos) {
+    const param1: string = datos.id_nota;
+    const param2: string = datos.id_usuario;
+    
+    let httpParams = new HttpParams()
+      .append('id_usuario', param2)
+      .append('id_nota', param1);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/deletenote';
+
+    return this.http.post(url, httpParams, options).toPromise();
+  }
+
+  getMessages(fecha) {
+    let httpParams = new HttpParams().append('date', fecha);
+    const options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        params: httpParams,
+    };
+    const url = this.url_base + '/getmessages';
+    return this.http.get(url, options).toPromise();
   }
 
 }

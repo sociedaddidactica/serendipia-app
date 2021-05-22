@@ -47,6 +47,7 @@
     padding: 0;
     margin: 0;
 }
+
 .align-left {
     justify-content: left !important;
     display: flex;
@@ -54,3 +55,71 @@
     padding: 0;
     margin: 0;
 }
+
+ion-calendar {
+    background-color: transparent !important;
+    padding: 0px 0px;
+
+    .title ion-button {
+        font-weight: bold;
+        color: white !important;
+    }
+    .unavailableDay {
+        background-color: #6E6B6B !important;
+        p {
+            color: #6E6B6B !important;
+        }
+    }
+    .days{
+        height: calc(1em + 2vh) !important;
+        margin-bottom: 0px !important;
+        padding: 0 !important;
+        p {
+            color: white !important;
+        }
+    }
+    .days-box {
+        padding: 0 !important;
+    }  
+    .today {
+        p {
+            text-decoration: underline;
+        }
+    }
+    .on-selected {
+        background-color: white !important;
+        p {
+            color: var(--main-color) !important;
+        }
+    }
+    .last-month-day{
+        p {
+            color: #6E6B6B !important;
+        }
+    }
+    .next-month-day{
+        p {
+            color: #6E6B6B !important;
+        }
+    }
+    ion-calendar-week{
+        li {
+            color:white !important;
+            font-weight: bold;
+        }
+    }
+    ion-icon {
+        &[class*="arrow-dropdown"] {
+            content: url("assets/ICONS/md-arrow-dropdown.svg") !important;
+        }
+        &[name*="ios-arrow-forward"] {
+            content: url("assets/ICONS/ios-arrow-forward.svg") !important;
+        }
+        &[name*="ios-arrow-back"] {
+            content: url("assets/ICONS/ios-arrow-back.svg") !important;
+        }
+    }
+        
+}
+
+

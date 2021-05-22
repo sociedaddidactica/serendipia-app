@@ -12,8 +12,8 @@
 
    --ion-color-principal: #00C4CC;
    --ion-color-principal-rgb: 0,196,204;
-   --ion-color-principal-contrast: #000000;
-   --ion-color-principal-contrast-rgb: 0,0,0;
+   --ion-color-principal-contrast: #ffffff;
+   --ion-color-principal-contrast-rgb: 255,255,255;
    --ion-color-principal-shade: #00acb4;
    --ion-color-principal-tint: #1acad1;
   
@@ -97,6 +97,14 @@
    */
 
   body {
+
+    --ion-color-principal: #00C4CC;
+    --ion-color-principal-rgb: 0,196,204;
+    --ion-color-principal-contrast: #ffffff;
+    --ion-color-principal-contrast-rgb: 255,255,255;
+    --ion-color-principal-shade: #00acb4;
+    --ion-color-principal-tint: #1acad1;
+
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;

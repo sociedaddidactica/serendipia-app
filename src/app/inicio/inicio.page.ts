@@ -23,6 +23,10 @@ export class InicioPage implements OnInit {
   }
 
   goTo() {
+    let id_user  = localStorage.getItem("id_usuario");
+    if (this.page_next == '/main'){
+      this.util.updateAccess(id_user);
+    }
     this.router.navigate([this.page_next]);
   }
 
@@ -73,7 +77,6 @@ export class InicioPage implements OnInit {
   }
   
   ionViewDidEnter() {
-      console.info("ionViewDidEnter");
       this.initMultimediaList();
   }
 

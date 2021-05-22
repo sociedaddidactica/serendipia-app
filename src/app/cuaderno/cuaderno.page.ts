@@ -25,9 +25,7 @@ export class CuadernoPage implements OnInit {
               private http: HttpService,
               private util: UtilsService) { 
     
-    console.log("constrcutor cuaderno ");
     this.id_usuario = localStorage.getItem('id_usuario');
-    
     
   }
 

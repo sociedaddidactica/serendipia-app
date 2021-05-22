@@ -51,6 +51,7 @@ export class SesionPage implements OnInit {
                 localStorage.setItem('nombre', res.usuario.nombre_apellido);
                 localStorage.setItem('version_app', res.version_app);
                 localStorage.setItem('sesion', "A");
+                this.util.updateAccess(res.usuario.id);
                 this.navCtrl.navigateForward('/main');
             }
         }, (error) => {

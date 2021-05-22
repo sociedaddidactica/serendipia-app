@@ -44,6 +44,7 @@ export class FormularioPage implements OnInit {
             email: ['', [Validators.required, Validators.email]],
             usuario: ['',[
               Validators.required,
+              Validators.pattern('[a-zA-Z0-9]*$'),
               Validators.minLength(6),
               Validators.maxLength(16),
             ]],
@@ -136,12 +137,9 @@ export class FormularioPage implements OnInit {
       let latitude;
       let longitude;
       let self = this;
-      console.log("obteniendo coordenadas ");
       this.geolocation.getCurrentPosition().then((resp) => {
           latitude = resp.coords.latitude;
           longitude = resp.coords.longitude;
-          // localStorage.setItem('latitude',  latitude + "");
-          // localStorage.setItem('longitude', longitude + "");
           self.getUbication(latitude, longitude);
       }).catch((error) => {
           console.log('Error getting location', error);
@@ -157,9 +155,6 @@ export class FormularioPage implements OnInit {
         this.nativeGeocoder.reverseGeocode(latitude, longitude, options)
             .then((result) => {
             localStorage.setItem('countryCode', result[0].countryCode);
-            //countryCode
-            //countryName
-            //locality
             console.log(JSON.stringify(result[0]));
         })
             .catch((error) => {

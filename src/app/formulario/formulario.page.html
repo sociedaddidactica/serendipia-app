@@ -63,14 +63,15 @@
                 <ion-label class="custom-ion-label" position="stacked">Correo electrónico</ion-label>
                 <ion-input formControlName="email" class="custom-ion-input" type="text" required></ion-input>
             </ion-item>
-            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('email').errors?.required && (frm_usuario.get('email').touched)">* El Correo electrónico es obligatorio </ion-label>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('email').errors?.required && (frm_usuario.get('email').touched)">* El Correo electrónico es obligatorio.</ion-label>
             <ion-label class="lbl_danger" *ngIf="frm_usuario.get('email').errors?.email && (frm_usuario.get('email').touched)">* El Correo electrónico no es válido.</ion-label>
             
             <ion-item lines="none" class="style-transparent">
                 <ion-label class="custom-ion-label" position="stacked">Usuario</ion-label>
                 <ion-input formControlName="usuario" class="custom-ion-input" type="text" required></ion-input>
             </ion-item>
-            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.required && (frm_usuario.get('usuario').touched)">* El usuario es obligatorio </ion-label>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.required && (frm_usuario.get('usuario').touched)">* El usuario es obligatorio.</ion-label>
+            <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.pattern && (frm_usuario.get('usuario').touched)">* El usuario debe contener valores alfanuméricos, sin espacios.</ion-label>
             <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.minlength && (frm_usuario.get('usuario').touched)">* El usuario tiene que tener al menos 6 caracteres.</ion-label>
             <ion-label class="lbl_danger" *ngIf="frm_usuario.get('usuario').errors?.maxlength && (frm_usuario.get('usuario').touched)">* El usuario tiene que tener como máximo 16 caracteres.</ion-label>
             
