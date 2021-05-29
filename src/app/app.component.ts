@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AlertController, Platform } from '@ionic/angular';
 import { Location } from '@angular/common';
+import { AppVersion } from '@ionic-native/app-version/ngx';
+
 
 @Component({
   selector: 'app-root',
@@ -10,51 +12,44 @@ import { Location } from '@angular/common';
 })
 export class AppComponent {
   // tittle= 'angular-http-client'
+
   constructor(private platform: Platform, 
               private _location: Location, 
               private alertController: AlertController,
-							private router: Router) {
+							private router: Router,
+							private appVersion: AppVersion
+							) {
         
 		this.initializeApp()
 	}
 
   initializeApp() {
-    // this.platform.ready().then(() => {
-    //   this.statusBar.styleDefault();
-    //   this.splashScreen.hide();
-
-    // // get FCM token
-		// 	this.fcm.getToken().then(token => {
-		// 			console.info("FCM token");
-		// 			console.info(token);
-		// 	});
-
-		// 	// ionic push notification example
-		// 	this.fcm.onNotification().subscribe(data => {
-		// 			console.info(data);
-		// 			if (data.wasTapped) {
-		// 					console.info('Received in background');
-		// 					this.router.navigate(["/main/hablapositivo"]);
-		// 			} else {
-		// 					console.info('Received in foreground');
-		// 					this.router.navigate(["/main/hablapositivo"]);
-		// 			}
-		// 	});      
-
-		// 	// refresh the FCM token
-		// 	this.fcm.onTokenRefresh().subscribe(token => {
-		// 			console.info("FCM token");
-		// 			console.info(token);
-		// 	});
-
-    // },
-		// error => {
-		// 	console.info("[Error]: Platform no ready");
-		// });
-
+		this.appVersion.getAppName().then(
+			(appName) => {
+				localStorage.setItem("app_name", appName);
+			},
+			(error) => {
+				console.info("[Error]: " + JSON.stringify(error));
+			});
 		
-
+		this.appVersion.getPackageName().then(
+			(packageName) => {
+				localStorage.setItem("pack_name", packageName);
+			},
+			(error) => {
+				console.info("[Error]: " + JSON.stringify(error));
+			});
 		
+		this.appVersion.getVersionNumber().then(
+			(versionNumber) => {
+				localStorage.setItem("app_version", versionNumber);
+			},
+			(error) => {
+				console.info("[Error]: " + JSON.stringify(error));
+			});
+
+		localStorage.setItem("web_site", "https://serendipias.app/");
+	
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
         if (this._location.isCurrentPathEqualTo('/inicio') || this._location.isCurrentPathEqualTo('/main/parati')) {

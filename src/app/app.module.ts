@@ -27,7 +27,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
-// import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -59,7 +60,8 @@ import { FirebaseX } from '@ionic-native/firebase-x/ngx';
     Geolocation,
     NativeGeocoder,
 		FirebaseX,
-		// YoutubeVideoPlayer,
+		YoutubeVideoPlayer,
+		AppVersion
   ],
   bootstrap: [AppComponent],
 })

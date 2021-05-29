@@ -8,6 +8,7 @@ import {
 
 import { HttpService } from '../services/http/http.service';
 import { UtilsService } from '../services/utils/utils.service';
+import { FcmService } from '../services/fcm/fcm.service';
 
 @Component({
   selector: 'app-sesion',
@@ -22,7 +23,8 @@ export class SesionPage implements OnInit {
     constructor(private http: HttpService,  
                 private formBuilder: FormBuilder,
                 private util: UtilsService,
-                private navCtrl: NavController) { 
+                private navCtrl: NavController,
+								private fcm: FcmService) { 
         
         this.buildForm();
     }
@@ -45,6 +47,7 @@ export class SesionPage implements OnInit {
                 localStorage.setItem('sesion', "I");
             }
             else {
+								this.fcm.init();
                 this.frm_login.reset();
                 // Guardo las variables de sesion para la app en LocalStorage
                 localStorage.setItem('id_usuario', res.usuario.id);

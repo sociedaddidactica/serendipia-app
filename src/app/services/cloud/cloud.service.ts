@@ -93,18 +93,7 @@ export class CloudService {
         link = await this.updateUrl(element.ruta_archivo);
 				element.link_acceso = link.formats[0].url;
 				list2.push(element);
-				localStorage.setItem('trackVideoListBck', JSON.stringify(list2));    
-				// getlink = this.updateUrl(element.ruta_archivo);
-        // getlink.then(link => {
-        //     element.link_acceso = link.formats[0].url;
-        //     list2.push(element);
-        //     localStorage.setItem('trackVideoListBck', JSON.stringify(list2));    
-        // }, 
-        // error => {
-        //     console.info("[Error]: " + error);
-            
-        // });
-        
+				localStorage.setItem('trackVideoListBck', JSON.stringify(list2));           
     }
   }
 

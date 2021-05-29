@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>informacion</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
-</ion-content>
+  <div class="div-top">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+					<ion-icon name="information-circle-outline" class="icon-section"></ion-icon><br>
+          <div id="name_section" class="name-section">Sobre nosotros</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="div-bottom">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+					<ion-text color="light">Nombre App: </ion-text><ion-text color="principal">{{ app_name }}</ion-text><br>
+          <ion-text color="light">Version: </ion-text><ion-text color="principal">{{ app_version }}</ion-text><br>
+					<ion-text color="light">Paquete: </ion-text><ion-text color="principal">{{ pack_name }}</ion-text><br>
+        </ion-col>
+      </ion-row>
+			<ion-row>
+				<ion-col><br></ion-col>
+			</ion-row>
+			<ion-row>
+        <ion-col size="12">
+					<ion-text color="light">Web Site: </ion-text><ion-text color="principal"><a target="_blank" [href]="web_site">{{ web_site }}</a></ion-text><br>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>

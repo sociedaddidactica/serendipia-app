@@ -11,6 +11,10 @@
     <param name="android-package" value="com.silkimen.cordovahttp.CordovaHttpPlugin"/>
   </feature>
 
+  <feature name="AppVersion">
+    <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
+  </feature>
+
   <feature name="FirebasePlugin">
     <param name="android-package" value="org.apache.cordova.firebase.FirebasePlugin"/>
     <param name="onload" value="true"/>
@@ -26,6 +30,10 @@
 
   <feature name="StreamingMedia">
     <param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia"/>
+  </feature>
+
+  <feature name="YoutubeVideoPlayer">
+    <param name="android-package" value="com.bunkerpalace.cordova.YoutubeVideoPlayer"/>
   </feature>
 
   <feature name="Camera">

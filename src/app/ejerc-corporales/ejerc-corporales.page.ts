@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-// import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { CloudService } from '../services/cloud/cloud.service';
 import { HttpService } from '../services/http/http.service';
 import { UtilsService } from '../services/utils/utils.service';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
   selector: 'app-ejerc-corporales',
@@ -25,7 +25,7 @@ export class EjercCorporalesPage implements OnInit {
               private http: HttpService, 
               private cloud: CloudService, 
               private streamingMedia: StreamingMedia,
-							// private youTube: YoutubeVideoPlayer
+							private youTube: YoutubeVideoPlayer
 							) { 
 
     this.video = {
@@ -49,7 +49,7 @@ export class EjercCorporalesPage implements OnInit {
   }
 
 	playYoutubeVideo(videoId){
-		// this.youTube.openVideo(videoId);
+		this.youTube.openVideo(videoId);
 	}
   
   async playVideo(videoId, index) {
