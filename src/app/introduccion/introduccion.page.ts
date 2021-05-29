@@ -50,7 +50,7 @@ export class IntroduccionPage implements OnInit {
         (error) => {
             this.util.loadtCtrl.dismiss();
             this.util.presentToast("Ha ocurrido un error, inténtelo mas tarde", "danger");
-            console.error("Error " + error.message);
+            console.info("[Error]: " + error.message);
         }
     );
   }

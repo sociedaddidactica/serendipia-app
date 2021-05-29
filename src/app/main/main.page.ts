@@ -45,9 +45,9 @@ export class MainPage implements OnInit {
         this.tab_musica = "/main/configuracion";
         this.tab_diario = "/main/configuracion";
     }
-   }
+	}
 
-   onClick(page) {
+  onClick(page) {
     this.nativePageTransitions.fade(this.optionsTrans);
     if (page == 'parati') {
         this.activeParatTi = true;
@@ -103,8 +103,9 @@ export class MainPage implements OnInit {
         this.activeConfig = true;
         this.router.navigate(["/main/configuracion"]);
     }
-}
-active(page) {
+	}
+
+	active(page) {
     if (page == 'parati') {
         this.activeParatTi = true;
         this.activeCategorias = false;
@@ -153,11 +154,11 @@ active(page) {
         this.activeInfo = false;
         this.activeConfig = true;
     }
-}
-tabChange(event) {
-    console.info("tabChange");
-    this.active(event.tab);
-}
+	}
+
+	tabChange(event) {
+			this.active(event.tab);
+	}
 
   ngOnInit() {
   }

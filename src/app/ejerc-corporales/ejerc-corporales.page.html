@@ -25,7 +25,7 @@
               <ion-list *ngIf="play_list.length">
                 <ng-container *ngFor="let videoclip of play_list; let i = index">
                   <ion-item-divider class="items-track">
-                    <ion-button slot="start" class="btn-icon" (click)="playVideo(videoclip.ruta_archivo, i)">
+                    <ion-button slot="start" class="btn-icon" (click)="playYoutubeVideo(videoclip.ruta_archivo)">
                       <!-- <ion-button slot="start" class="btn-icon" (click)="goToPlayer(videoclip.ruta_archivo)"> -->
                       <!-- <ion-icon [src]="this.subsection_icon"></ion-icon> -->
                       <ion-icon name="play-circle-outline"></ion-icon>

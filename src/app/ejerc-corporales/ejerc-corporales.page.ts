@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+// import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { CloudService } from '../services/cloud/cloud.service';
 import { HttpService } from '../services/http/http.service';
 import { UtilsService } from '../services/utils/utils.service';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
-
 
 @Component({
   selector: 'app-ejerc-corporales',
@@ -24,7 +24,9 @@ export class EjercCorporalesPage implements OnInit {
               private route: ActivatedRoute, 
               private http: HttpService, 
               private cloud: CloudService, 
-              private streamingMedia: StreamingMedia) { 
+              private streamingMedia: StreamingMedia,
+							// private youTube: YoutubeVideoPlayer
+							) { 
 
     this.video = {
       id_producto: "",
@@ -45,6 +47,10 @@ export class EjercCorporalesPage implements OnInit {
   getVideosFromStorage() {
     this.play_list = JSON.parse(localStorage.getItem("trackVideoList")) === null ? [] : JSON.parse(localStorage.getItem("trackVideoList"));
   }
+
+	playYoutubeVideo(videoId){
+		// this.youTube.openVideo(videoId);
+	}
   
   async playVideo(videoId, index) {
     let myLoading = await this.util.presentLoading();
@@ -54,7 +60,7 @@ export class EjercCorporalesPage implements OnInit {
         successCallback: () => {
         },
         errorCallback: (e) => {
-            console.log(e);
+            console.info(e);
         },
         shouldAutoClose: true,
         controls: true
@@ -63,7 +69,13 @@ export class EjercCorporalesPage implements OnInit {
     let result: any;
     if (videoUrl.indexOf("www.youtube.com") >= 0) {
         result = await this.cloud.updateUrl(videoId);
-        videoUrl = result.formats[0].url;
+				videoUrl = result.formats[0].url;
+				// result.then(link => {
+				// 	videoUrl = link.formats[0].url;
+				// },
+				// error => {
+				// 	console.info("[Error]: " + error);
+				// });
     }
     let self = this;
     let p1 = new Promise(function (resolve, reject) {
@@ -73,7 +85,7 @@ export class EjercCorporalesPage implements OnInit {
         myLoading.dismiss();
     }, error => {
         myLoading.dismiss();
-        console.log(error);
+        console.info(error);
         this.util.presentToast("Error mostrando el video, intente mas tarde", "danger");
     });
   }

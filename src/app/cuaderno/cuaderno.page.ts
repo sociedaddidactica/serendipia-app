@@ -45,13 +45,12 @@ export class CuadernoPage implements OnInit {
     (error) => {
       myLoading.dismiss();
       this.util.presentToast("Ha ocurrido un error, inténtelo mas tarde", "danger");
-      console.error("Error " + error.message);
+      console.info("[Error]: " + error.message);
     });
     
   }
 
   goTo(id_note){
-    console.log(id_note);
     this.navCtrl.navigateForward("/main/editor/" + id_note);
   }
 
@@ -60,11 +59,10 @@ export class CuadernoPage implements OnInit {
   }
 
   ionViewWillEnter(){
-    console.log("ionViewWillEnter cuaderno ");
     this.getNotes(this.id_usuario);
   }
+
   ngOnInit() {
-    console.log("ngOnInit cuaderno ");
   }
 
 }

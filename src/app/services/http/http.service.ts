@@ -96,7 +96,7 @@ export class HttpService {
   }
 
   uploadProfilePic(photoProf: Photo, id_user: any) {
-      console.error("foto in upload funcion: " + photoProf.filepath);
+      console.info("foto in upload funcion: " + photoProf.filepath);
     const fileTransfer: FileTransferObject = this.transfer.create();
     const url = this.url_base + '/uploadprofilepic';
     const pictureName = id_user + "_" + photoProf.name;
@@ -271,8 +271,10 @@ export class HttpService {
     return this.http.post(url, httpParams, options).toPromise();
   }
 
-  getMessages(fecha) {
-    let httpParams = new HttpParams().append('date', fecha);
+  getMessagesHP(fecha, id_grupo_usuario) {
+    let httpParams = new HttpParams()
+		.append('date', fecha)
+		.append('id_grupo_usuario', id_grupo_usuario);
     const options = {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -282,5 +284,18 @@ export class HttpService {
     const url = this.url_base + '/getmessages';
     return this.http.get(url, options).toPromise();
   }
+
+	getGroups(id_usuario){
+		let httpParams = new HttpParams()
+		.append('id_usuario', id_usuario);
+    const options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        params: httpParams,
+    };
+    const url = this.url_base + '/getgroupsuser';
+    return this.http.get(url, options).toPromise();
+	}
 
 }

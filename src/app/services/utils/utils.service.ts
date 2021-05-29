@@ -32,10 +32,10 @@ export class UtilsService {
 
   updateAccess(id_user) {
     this.http.updateAccess(id_user).then((res: any) => {
-      console.info(res.message);
+      console.info("Acceso actualizado: " + res.message);
     },
     (error) => {
-      console.error(error.message);
+      console.info("[Error]: " + error.message);
     });
   }
 }

@@ -18,12 +18,11 @@
         <ion-col>
           <div class="ion-padding">
             <ion-calendar [(ngModel)]="date"
-              
               (select)="onChange($event)"
+							(monthChange)="onMonthChange($event)"
               [options]="optionsRange"
               [type]="type"
               [format]="'YYYY-MM-DD'">
-              
             </ion-calendar>
           </div>
         </ion-col>
@@ -31,13 +30,43 @@
     </ion-grid>
   </div>
   <div class="div-bottom">
-    <ng-container *ngFor="let message of message_list; let i = index">
-      <ion-card class="card-note">
-        <ion-card-header>
-          <ion-card-subtitle>{{ message.title }}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>{{ message.content }}</ion-card-content>
-      </ion-card>
-    </ng-container>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="separador">&nbsp;</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-padding-col">
+          <p class="align-left">
+            <ion-text color="principal">
+              {{ diaSelected }} 
+            </ion-text>
+          </p>
+          <p class="align-left">
+            <ion-text color="principal"  *ngIf="message_list">
+              {{ message_list.length==0 ? "Sin " : message_list.length }} Mensajes
+            </ion-text>
+            <ion-text color="principal"  *ngIf="!message_list">
+              Sin Mensajes
+            </ion-text>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="message_list">
+        <ion-col>
+          <ng-container *ngFor="let message of message_list; let i = index">
+            <ion-card class="card-list">
+              <ion-card-header>
+                <ion-card-subtitle>
+                  <ion-icon color="principal" name="alarm-outline"></ion-icon>
+                  {{ message.time + ":"}}  {{ message.title }}</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <p>{{ message.content }}</p>
+              </ion-card-content>
+            </ion-card>
+          </ng-container>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

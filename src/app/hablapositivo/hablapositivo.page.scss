@@ -26,14 +26,6 @@ ion-content {
   display: flex;
   text-align: center;
 }
-.div-bottom ion-grid {
-  margin-block-start: -7vh;
-}
-
-.div-bottom ion-col {
-  justify-content: center;
-}
-
 .btn-icon {
   --background: transparent !important;
   --border: none !important;
@@ -41,7 +33,6 @@ ion-content {
   height: 100%;
   margin: 0 -5px;
 }
-
 .icon-section {
   margin: 0 auto;
   text-align: center; 
@@ -54,7 +45,31 @@ ion-content {
   text-align: center;
   color: white;
 }
+.separador {
+  border-bottom: 0.1em solid #8a8181;
+  width: 80vw;
+}
+.card-list {
+	margin: 1em auto;
+  width: 90vw;
+  border-radius: 10px;
 
+	ion-card-header {
+		text-align: left;
+		padding: 0.8em 1em 0.4em 1em;
+		ion-card-subtitle{
+			font-weight: bold !important;
+		}
+	}
+	ion-card-content{
+		text-align: justify;
+		padding: 0 1em 0.5em 1em; 
+	}
+}
+
+.ion-padding-col {
+  padding: 2vh 0 0 5vw;
+}
 
 
 

@@ -53,7 +53,7 @@ export class PhotoService {
             // profilePic.style.height = '100px';
 
         }).catch(e => {
-          console.log(e);
+          console.info(e);
         });
 
         
@@ -74,14 +74,14 @@ export class PhotoService {
                 this.photos.name = this.createFileName();
                 this.photos.webviewPath = this.webView.convertFileSrc(newPath);
 
-                console.log("filepath" + this.photos.filepath);
-                console.log("webviewPath" + this.photos.webviewPath);
+                console.info("filepath" + this.photos.filepath);
+                console.info("webviewPath" + this.photos.webviewPath);
 
                 // this.showCroppedImage(newPath.split('?')[0])
             },
             error => {
                 this.presentToast(JSON.stringify(error), "danger");
-                console.error('Error cropping image' + JSON.stringify(error));
+                console.info('Error cropping image' + JSON.stringify(error));
         });
         // return photo;
     }

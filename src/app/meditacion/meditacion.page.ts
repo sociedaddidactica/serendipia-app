@@ -23,7 +23,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case 'triangulo':
@@ -33,7 +33,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case '4meditacion':
@@ -43,7 +43,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case 'iniciacion':
@@ -53,7 +53,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case 'ansiedad_estres':
@@ -63,7 +63,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case 'salud_plena':
@@ -73,7 +73,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case 'exito_realizacion':
@@ -83,7 +83,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           case 'sueño_dia_perfecto':
@@ -93,7 +93,7 @@ export class MeditacionPage implements OnInit {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
               }, (error) => {
-                  console.log("Error " + JSON.stringify(error));
+                  console.info("[Error]: " + JSON.stringify(error));
               });
               break;
           default:

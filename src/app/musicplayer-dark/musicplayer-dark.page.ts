@@ -120,7 +120,7 @@ export class MusicplayerDarkPage implements OnInit {
       loader.dismiss();
     }, error => {
         loader.dismiss();
-        console.log(error);
+        console.info(error);
     });
   }
 
@@ -220,7 +220,7 @@ export class MusicplayerDarkPage implements OnInit {
   }
 
   ngOnDestroy() {
-    console.log("onDestroy");
+    console.info("onDestroy");
     this.reset();
     // this.util.loadtCtrl.dismiss();
   }

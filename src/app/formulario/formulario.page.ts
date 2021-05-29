@@ -70,12 +70,12 @@ export class FormularioPage implements OnInit {
                        (data) => {
                            myLoading.dismiss();
                            this.util.presentToast(res.message, "principal");
-                           console.log(JSON.stringify(data));
+                           console.info(JSON.stringify(data));
                        },
                        (error2) => {
                            myLoading.dismiss();
                            this.util.presentToast(res.message + ", Sin embargo no pudimos cargar su foto", "principal");
-                           console.error("Error cargando file: " + JSON.stringify(error2));
+                           console.info("[Error]: Cargando file: " + JSON.stringify(error2));
                        }
                     );
                     this.frm_usuario.reset();
@@ -88,7 +88,7 @@ export class FormularioPage implements OnInit {
             (error) => {
                 myLoading.dismiss();
                 this.util.presentToast("Ha ocurrido un error, inténtelo mas tarde", "danger");
-                console.error("Error " + error.message);
+                console.info("[Error]: " + error.message);
             }
         );
     }
@@ -142,7 +142,7 @@ export class FormularioPage implements OnInit {
           longitude = resp.coords.longitude;
           self.getUbication(latitude, longitude);
       }).catch((error) => {
-          console.log('Error getting location', error);
+          console.info('Error getting location', error);
           localStorage.setItem('countryCode', "NULL");
       });
     }
@@ -155,10 +155,10 @@ export class FormularioPage implements OnInit {
         this.nativeGeocoder.reverseGeocode(latitude, longitude, options)
             .then((result) => {
             localStorage.setItem('countryCode', result[0].countryCode);
-            console.log(JSON.stringify(result[0]));
+            console.info(JSON.stringify(result[0]));
         })
             .catch((error) => {
-            console.log(error);
+            console.info(error);
             localStorage.setItem('countryCode', "NULL");
         });
     }

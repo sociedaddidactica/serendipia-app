@@ -67,7 +67,7 @@ export class HipnosisPage implements OnInit {
           let section = res.section;
           this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
       }, (error) => {
-          console.log("Error " + JSON.stringify(error));
+          console.info("[Error]: " + JSON.stringify(error));
       });
   }
   getIdSection(nombre_seccion) {

@@ -22,7 +22,7 @@ export class MusicaPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer-dark/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'sueño':
@@ -32,7 +32,7 @@ export class MusicaPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer-dark/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'naturaleza':
@@ -42,7 +42,7 @@ export class MusicaPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer-dark/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'relajante':
@@ -52,7 +52,7 @@ export class MusicaPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer-dark/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'soñar_despierto':
@@ -62,7 +62,7 @@ export class MusicaPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer-dark/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'trabajo':
@@ -72,7 +72,7 @@ export class MusicaPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer-dark/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         default:

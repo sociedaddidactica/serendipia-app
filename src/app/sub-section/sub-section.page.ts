@@ -36,7 +36,7 @@ export class SubSectionPage implements OnInit {
         this.play_list = res.subSections;
         // this.initPlaylist();
     }, (error) => {
-        console.log("Error " + JSON.stringify(error));
+        console.info("[Error]: " + JSON.stringify(error));
     });
   }
   goSection(id_seccion) {

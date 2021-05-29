@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { AudioService } from '../audio/audio.service';
 import { HttpService } from '../http/http.service';
 import * as yt from 'ionic-youtube-streams';
 
@@ -10,11 +9,9 @@ import * as yt from 'ionic-youtube-streams';
 export class CloudService {
   files: any[];
   video: { id_producto: string; nombre_producto: string; link_acceso: string; ruta_archivo: string; orden: number; duration: number; };
-  play_list: { id_producto: string; nombre_producto: string; link_acceso: string; ruta_archivo: string; orden: number; duration: number; }[];
+  play_list: any[];
 
-  constructor(private audioService: AudioService, private http: HttpService) {
-    this.audioService = audioService;
-    this.http = http;
+  constructor(private http: HttpService) {
     this.files = [];
     this.video = {
         id_producto: "",
@@ -25,7 +22,6 @@ export class CloudService {
         duration: -1
     };
     this.play_list = [this.video];
-    console.log("constructor cloud");
     this.files.splice(0, this.files.length);
   }
 
@@ -43,7 +39,7 @@ export class CloudService {
           self.http.getAllAudiosFile().then((res: any) => {
               resolve(res.files);
           }, (error) => {
-              console.log("Error " + JSON.stringify(error));
+              console.info("[Error]: " + JSON.stringify(error));
           });
       });
   }
@@ -82,28 +78,42 @@ export class CloudService {
               // localStorage.setItem("trackVideoList", JSON.stringify(self.play_list));
               // localStorage.setItem("trackVideoListBck", JSON.stringify(self.play_list));
           }, (error) => {
-              console.log("Error: " + JSON.stringify(error));
+              console.info("[Error]: " + JSON.stringify(error));
           });
       });
   }
 
   async initVideoList() {
-    console.log("initVideoList");
     let play_list = JSON.parse(localStorage.getItem("trackVideoListBck"));
     var list2 = [];
     let link: any;
+    let getlink: any;
     for (let index = 0; index < play_list.length; index++) {
         const element = play_list[index];
         link = await this.updateUrl(element.ruta_archivo);
-        element.link_acceso = link.formats[0].url;
-        list2.push(element);
-        localStorage.setItem('trackVideoListBck', JSON.stringify(list2));
+				element.link_acceso = link.formats[0].url;
+				list2.push(element);
+				localStorage.setItem('trackVideoListBck', JSON.stringify(list2));    
+				// getlink = this.updateUrl(element.ruta_archivo);
+        // getlink.then(link => {
+        //     element.link_acceso = link.formats[0].url;
+        //     list2.push(element);
+        //     localStorage.setItem('trackVideoListBck', JSON.stringify(list2));    
+        // }, 
+        // error => {
+        //     console.info("[Error]: " + error);
+            
+        // });
+        
     }
   }
 
-  updateUrl(videoId) {
+  async updateUrl(videoId) {
     return new Promise(function (resolve) {
         resolve(yt.info(videoId));
     });
+    // return await yt.info(videoId);
   }
+
+	
 }

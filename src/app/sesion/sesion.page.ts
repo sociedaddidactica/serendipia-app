@@ -50,6 +50,7 @@ export class SesionPage implements OnInit {
                 localStorage.setItem('id_usuario', res.usuario.id);
                 localStorage.setItem('nombre', res.usuario.nombre_apellido);
                 localStorage.setItem('version_app', res.version_app);
+								localStorage.setItem('id_grupo_usuario', res.grupos);
                 localStorage.setItem('sesion', "A");
                 this.util.updateAccess(res.usuario.id);
                 this.navCtrl.navigateForward('/main');
@@ -58,7 +59,7 @@ export class SesionPage implements OnInit {
             myLoading.dismiss();
             localStorage.setItem('sesion', "I");
             this.util.presentToast("Ha ocurrido un error, inténtelo mas tarde", "danger");
-            console.error("Error " + error.message);
+            console.info("[Error]: " + error.message);
         });
 
     }

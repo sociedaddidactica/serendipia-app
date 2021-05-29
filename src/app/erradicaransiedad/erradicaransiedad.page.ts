@@ -37,7 +37,7 @@ export class ErradicaransiedadPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/sub-section/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'meditacion':
@@ -47,7 +47,7 @@ export class ErradicaransiedadPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'tla':
@@ -57,7 +57,7 @@ export class ErradicaransiedadPage implements OnInit {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         case 'ejercicios':
@@ -70,7 +70,7 @@ export class ErradicaransiedadPage implements OnInit {
                 // this.cloud.getVideos(section.id_seccion);
                 this.navCtrl.navigateForward("/main/ejerc-corporales/" + section.id_seccion);
             }, (error) => {
-                console.log("Error " + JSON.stringify(error));
+                console.info("[Error]: " + JSON.stringify(error));
             });
             break;
         default:
