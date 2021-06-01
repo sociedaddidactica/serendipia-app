@@ -93,8 +93,6 @@ export class FormularioPage implements OnInit {
         );
     }
 
-    
-
     capturePhoto() {
         // this.photoProfile = this.photoService.takePicture(this.camara.PictureSourceType.CAMERA);
         this.photoService.takePicture(this.camara.PictureSourceType.CAMERA);

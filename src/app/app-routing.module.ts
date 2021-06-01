@@ -35,6 +35,11 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
   },
+  {
+    path: 'modal-new-event',
+    loadChildren: () => import('./modal-new-event/modal-new-event.module').then( m => m.ModalNewEventPageModule)
+  },
+
   
 
   

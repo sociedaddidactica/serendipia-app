@@ -1,6 +1,6 @@
 {
   "appId": "com.serendipia.app",
-  "appName": "SerendipiaApp",
+  "appName": "Serendipia",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

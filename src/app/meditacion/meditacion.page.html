@@ -18,8 +18,20 @@
   <div class="div-bottom">
     <ion-grid fixed>
       <ion-row>
+				<ion-col size="6">
+          <ion-card class="card-left" (click)="goTo('iniciacion')">
+            <ion-item class="item-menu">
+              <ion-button>
+                <ion-icon src="/assets/ICONS/icon-iniciacion.svg"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-card-content>
+              <ion-text color="dark"><b>Iniciación</b><br /> a la meditación</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
         <ion-col size="6">
-          <ion-card class="card-left" (click)="goTo('reto_7_dias')">
+          <ion-card class="card-right" (click)="goTo('reto_7_dias')">
             <ion-item class="item-menu">
               <ion-button>
                 <ion-icon src="/assets/ICONS/icon-reto-7dias.svg"></ion-icon>
@@ -31,8 +43,11 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
-        <ion-col size="6">
-          <ion-card class="card-right" (click)="goTo('triangulo')">
+        
+      </ion-row>
+      <ion-row class="card-bottom">
+				<ion-col size="6">
+          <ion-card class="card-left" (click)="goTo('triangulo')">
             <ion-item class="item-menu">
               <ion-button>
                 <ion-icon src="/assets/ICONS/icon-triangulo-exito.svg"></ion-icon>
@@ -43,10 +58,8 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
-      </ion-row>
-      <ion-row class="card-bottom">
         <ion-col size="6">
-          <ion-card class="card-left" (click)="goTo('4meditacion')">
+          <ion-card class="card-right" (click)="goTo('4meditacion')">
             <ion-item class="item-menu">
               <ion-button>
                 <ion-icon src="/assets/ICONS/icon-4-meditaciones.svg"></ion-icon>
@@ -54,18 +67,6 @@
             </ion-item>
             <ion-card-content>
               <ion-text color="dark"><b>4 meditaciones</b> <br />para transformar tu vida</ion-text>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="6">
-          <ion-card class="card-right" (click)="goTo('iniciacion')">
-            <ion-item class="item-menu">
-              <ion-button>
-                <ion-icon src="/assets/ICONS/icon-iniciacion.svg"></ion-icon>
-              </ion-button>
-            </ion-item>
-            <ion-card-content>
-              <ion-text color="dark"><b>Iniciación</b><br /> a la meditación</ion-text>
             </ion-card-content>
           </ion-card>
         </ion-col>

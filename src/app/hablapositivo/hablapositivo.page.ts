@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NavController, ModalController  } from '@ionic/angular';
 import { CalendarComponentOptions } from 'ion2-calendar';
 import * as moment from 'moment';
+import { ModalNewEventPage } from '../modal-new-event/modal-new-event.page';
 import { HttpService } from '../services/http/http.service';
 import { UtilsService } from '../services/utils/utils.service';
 
@@ -12,9 +13,11 @@ import { UtilsService } from '../services/utils/utils.service';
   styleUrls: ['./hablapositivo.page.scss'],
 })
 export class HablapositivoPage implements OnInit {
+
   id_usuario: string;
   date: string;
   type: 'string';
+	modalData: any;
 
   message: {
     id: string,
@@ -24,16 +27,20 @@ export class HablapositivoPage implements OnInit {
     content: string
   };
 
-  message_list: any[];
+  @Input() message_list: any[];
+	 
   diaSelected: string;
   
   optionsRange: CalendarComponentOptions;
 	id_grupo_usuario: string;
 
   constructor(private navCtrl: NavController, 
+							public modalCtrl : ModalController,
+							private router: Router,
               private route: ActivatedRoute, 
               private http: HttpService,
-              private util: UtilsService) { 
+              private util: UtilsService
+							) { 
 
     this.id_usuario = localStorage.getItem('id_usuario');
 		this.id_grupo_usuario = localStorage.getItem('id_grupo_usuario');
@@ -53,7 +60,7 @@ export class HablapositivoPage implements OnInit {
 
   async getMessages(mes: string) {
     const myLoading = await this.util.presentLoading();
-    this.http.getMessagesHP(mes, this.id_grupo_usuario).then((res:any) => {
+    this.http.getMessagesHP(mes, this.id_usuario).then((res:any) => {
       if (res.error){
         myLoading.dismiss();
         this.util.presentToast(res.message, "danger");
@@ -99,12 +106,8 @@ export class HablapositivoPage implements OnInit {
     }
     let hoy = moment();
     let time_sel = moment(event.time);
-    if (time_sel <= hoy){
-      let date_selected = time_sel.format("YYYY-MM-DD");
-      this.getMessageOfDay(date_selected);
-    } else {
-      this.message_list = null;
-    }
+		let date_selected = time_sel.format("YYYY-MM-DD");
+    this.getMessageOfDay(date_selected);
   }
 
 	onMonthChange(event) {
@@ -112,6 +115,8 @@ export class HablapositivoPage implements OnInit {
 	}
 
   ionViewWillEnter(){
+		console.log("ionViewWillEnter");
+		
 		this.clearDaySelected();
 		document.getElementsByClassName("today")[0].classList.add("on-selected");
     this.diaSelected = "HOY";
@@ -126,6 +131,41 @@ export class HablapositivoPage implements OnInit {
 		for(var i = 0; i < elemento.length; i++){
 			elemento[i].classList.remove("on-selected");
 		}
+	}
+
+	async adminTask(tipo, id_task, index){
+		console.info("abir modal");
+		let compProp;
+		if (tipo == "A"){
+			compProp = {
+        'id_task': id_task
+      }
+		} else if (tipo == "E"){
+			compProp = {
+        'id_task': id_task,
+				'title_task': this.message_list[index].title,
+				'descrip_task': this.message_list[index].content,
+				'fecha_task': this.message_list[index].date,
+				'time_task': this.message_list[index].time
+      }
+		}
+		console.log(compProp);
+		const modal = await this.modalCtrl.create({
+      component: ModalNewEventPage,
+			componentProps: compProp
+    });
+
+		modal.onDidDismiss().then((modalData) => {
+      if (modalData.data !== undefined) {
+        this.modalData = modalData.data;
+				this.getMessages(moment().format("MM"));
+				setTimeout(() => {
+					this.getMessageOfDay(moment().format("YYYY-MM-DD"));	
+				}, 1000);
+      } 
+    });
+
+    return await modal.present();
 	}
 
   ngOnInit() {

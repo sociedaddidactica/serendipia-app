@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content [fullscreen]="true">
   <div class="div-top">
     <ion-grid fixed>
       <ion-row>
@@ -32,8 +32,19 @@
   <div class="div-bottom">
     <ion-grid>
       <ion-row>
-        <ion-col class="separador">&nbsp;</ion-col>
+        <ion-col class="separador">
+					
+				</ion-col>
       </ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-fab class="ionfab" vertical="center">
+						<ion-fab-button color="principal"  (click)="adminTask('A', 0, 0)"> 
+							<ion-icon name="add-circle-outline"></ion-icon>
+						</ion-fab-button>
+					</ion-fab>
+				</ion-col>
+			</ion-row>
       <ion-row>
         <ion-col class="ion-padding-col">
           <p class="align-left">
@@ -54,7 +65,7 @@
       <ion-row *ngIf="message_list">
         <ion-col>
           <ng-container *ngFor="let message of message_list; let i = index">
-            <ion-card class="card-list">
+            <ion-card class="card-list" (click)="adminTask('E', message.id, i)">
               <ion-card-header>
                 <ion-card-subtitle>
                   <ion-icon color="principal" name="alarm-outline"></ion-icon>

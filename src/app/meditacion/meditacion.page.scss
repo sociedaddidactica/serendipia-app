@@ -74,6 +74,7 @@ ion-row {
 .item-menu {
   padding-top: 10px;
   text-align: center;
+	--border-style: none !important;
 }
 .item-menu ion-button {
   --background: var(--main-color);

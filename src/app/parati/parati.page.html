@@ -4,41 +4,70 @@
     </div>
     <ion-grid fixed="true">
         <ion-row>
-            <ion-col size="3"></ion-col>
-            <ion-col class="ion-align-self-center" size="6">
-                <ion-card class="card-2" (click)="goTo('ansiedad')">
-                    <ion-card-content>
-                        <div>
-                            <p>MÉTODO</p>
-                            <p>PARA ERRADICAR</p>
-                            <p class="background">LA ANSIEDAD</p>
-                        </div>
-                    </ion-card-content>
-                </ion-card>
-            </ion-col>
-            <ion-col size="3"></ion-col>
+					<ion-col class="ion-align-self-center" size="6">
+						<ion-card class="card-1" (click)="goTo('iniciando_meditacion')">
+								<ion-card-content>
+										<div>
+												<p>INICIACIÓN A LA </p>
+												<p class="background"> MEDITACIÓN </p>
+										</div>
+								</ion-card-content>
+						</ion-card>
+					</ion-col>
+					<ion-col class="ion-align-self-center" size="6">
+							<ion-card class="card-2" (click)="goTo('eliminar_ansiedad')">
+									<ion-card-content>
+											<div>
+													<p>ELIMINAR LA</p>
+													<p class="background"> ANSIEDAD </p>
+											</div>
+									</ion-card-content>
+							</ion-card>
+					</ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="6">
-                <ion-card class="card-3" (click)="goTo('meditacion')">
+                <ion-card class="card-3" (click)="goTo('salud_plena')">
                     <ion-card-content>
                         <div>
-                            <p>CREANDO</p>
-                            <p class="background">MI BIENESTAR</p>
+                            <p>SALUD </p>
+                            <p class="background"> PLENA </p>
                         </div>
                     </ion-card-content>
                 </ion-card>
             </ion-col>
             <ion-col ize="6">
-                <ion-card class="card-4" (click)="goTo('diario')">
+                <ion-card class="card-4" (click)="goTo('miedo_rechazo')">
                     <ion-card-content>
                         <div>
-                            <p>HOY DECIDO</p>
-                            <p class="background">ESTAR BIEN</p>
+                            <p>MIEDO AL</p>
+                            <p class="background"> RECHAZO </p>
                         </div>
                     </ion-card-content>
                 </ion-card>
             </ion-col>
         </ion-row>
+				<ion-row>
+					<ion-col size="6">
+							<ion-card class="card-5" (click)="goTo('triangulo_exito')">
+									<ion-card-content>
+											<div>
+													<p>EL TRIANGULO DEL</p>
+													<p class="background"> ÉXITO </p>
+											</div>
+									</ion-card-content>
+							</ion-card>
+					</ion-col>
+					<ion-col ize="6">
+							<ion-card class="card-6" (click)="goTo('dejando_fumar')">
+									<ion-card-content>
+											<div>
+													<p>DEJANDO DE </p>
+													<p class="background"> FUMAR </p>
+											</div>
+									</ion-card-content>
+							</ion-card>
+					</ion-col>
+			</ion-row>
     </ion-grid>
 </ion-content>

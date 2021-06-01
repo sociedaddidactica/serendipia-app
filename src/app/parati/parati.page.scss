@@ -22,8 +22,12 @@ ion-avatar {
 ion-grid {
   --ion-grid-padding-xs: 5%;
 }
+.card-1 {
+  --background: url("/assets/PARATI/iniciacion_meditacion.jpg") no-repeat center center / cover;
+  border-radius: 15px;
+}
 .card-2 {
-  --background: url("/assets/PARATI/card-2.png") no-repeat center center / cover;
+  --background: url("/assets/PARATI/eliminar_ansiedad.jpg") no-repeat center center / cover;
   border-radius: 15px;
 }
 .card-3 {
@@ -31,11 +35,19 @@ ion-grid {
   border-radius: 15px;
 }
 .card-4 {
-  --background: url("/assets/PARATI/card-4.png") no-repeat center center / cover;
+  --background: url("/assets/PARATI/miedo_rechazo.jpg") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-5 {
+  --background: url("/assets/PARATI/triangulo_del_exito.jpg") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-6 {
+  --background: url("/assets/PARATI/dejando_de_fumar.jpg") no-repeat center center / cover;
   border-radius: 15px;
 }
 ion-card ion-card-content {
-  height: 32vh;
+  height: 28vh;
   position: relative;
 }
 ion-card ion-card-content div {

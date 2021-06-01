@@ -271,10 +271,10 @@ export class HttpService {
     return this.http.post(url, httpParams, options).toPromise();
   }
 
-  getMessagesHP(fecha, id_grupo_usuario) {
+  getMessagesHP(fecha, id_usuario) {
     let httpParams = new HttpParams()
 		.append('date', fecha)
-		.append('id_grupo_usuario', id_grupo_usuario);
+		.append('id_grupo_usuario', id_usuario);
     const options = {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -297,5 +297,47 @@ export class HttpService {
     const url = this.url_base + '/getgroupsuser';
     return this.http.get(url, options).toPromise();
 	}
+
+	saveTask(datos) {
+		let fecha = datos.fecha.slice(0, datos.fecha.indexOf('T'));
+    let httpParams = new HttpParams()
+      .append('id_task', datos.id_task)
+      .append('id_usuario', datos.id_usuario)
+      .append('title', datos.title)
+			.append('descrip', datos.descrip)
+			.append('fecha', fecha)
+      .append('time', datos.time);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/savetaskhp';
+
+    return this.http.post(url, httpParams, options).toPromise();
+  }
+
+  deleteTask(datos) {
+    const param1: string = datos.id_task;
+    const param2: string = datos.id_usuario;
+    
+    let httpParams = new HttpParams()
+      .append('id_usuario', param2)
+      .append('id_task', param1);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/deletetaskhp';
+
+    return this.http.post(url, httpParams, options).toPromise();
+  }
 
 }
