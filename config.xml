@@ -11,7 +11,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="YouTubeDataApiKey" value="AIzaSyDgM95C8Tumb2tEWtnTd0PtCZivsPCE0wA" />
+    <preference name="YouTubeDataApiKey" value="" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
