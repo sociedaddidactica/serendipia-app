@@ -2,7 +2,7 @@
 <widget id="com.serendipia.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Serendipia</name>
     <description />
-    <author email="hola@serendipia.app" href="https://serendipias.app/">Serendipias.app</author>
+    <author email="hola@serendipias.app" href="https://serendipias.app/">Serendipias.app</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

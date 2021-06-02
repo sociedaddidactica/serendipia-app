@@ -4,6 +4,8 @@ import { CloudService } from '../services/cloud/cloud.service';
 import { HttpService } from '../services/http/http.service';
 import { UtilsService } from '../services/utils/utils.service';
 import { FcmService } from '../services/fcm/fcm.service';
+import { Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
 
 @Component({
   selector: 'app-inicio',
@@ -13,6 +15,7 @@ import { FcmService } from '../services/fcm/fcm.service';
 export class InicioPage implements OnInit {
   page_next: string;
   version_app: any;
+	ready: boolean;
 
   constructor(private http: HttpService, 
               private router: Router, 
@@ -20,8 +23,10 @@ export class InicioPage implements OnInit {
               private cloudService: CloudService,
 							private fcm: FcmService,
 							) { 
-    this.clearStorage();
-    this.checkVersionApp();
+    
+		this.ready = false;
+		this.clearStorage();
+    // this.checkVersionApp();
     //this.checkConexion();
   }
 
@@ -40,6 +45,8 @@ export class InicioPage implements OnInit {
       localStorage.removeItem("section_name");
       localStorage.removeItem("section_icon");
       localStorage.removeItem("subsection_icon");
+			localStorage.removeItem("hp_message_list");
+			
   }
 
   // Verifica si el usuario está en periodo de prueba o ya canceló la suscripción
@@ -52,6 +59,7 @@ export class InicioPage implements OnInit {
     else {
         this.http.getVersionAppForUser(id_user).then((res: any) => {
             // Valores de version pueden ser: NULL, FULL, TRIAL, PENDIENT
+						
             this.version_app = res.versionApp;
             localStorage.setItem('version_app', this.version_app);
             if (localStorage.getItem('sesion') == 'A') {
@@ -65,9 +73,11 @@ export class InicioPage implements OnInit {
 									console.info("[Error]: " + error.message);
 								});
                 this.page_next = '/main';
+								this.ready = true;
             }
             else {
                 this.page_next = '/subinicio';
+								this.ready = true;
             }
         }, (error) => {
             localStorage.setItem('sesion', "I");
@@ -90,12 +100,12 @@ export class InicioPage implements OnInit {
   }
   
   ionViewDidEnter() {
-      this.initMultimediaList();
+		this.checkVersionApp();
+		this.initMultimediaList();
+		SplashScreen.hide();
   }
 
-	
-
-  ngOnInit() {
+	ngOnInit() {
 		
   }
 

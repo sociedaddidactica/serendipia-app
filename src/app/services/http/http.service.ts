@@ -299,13 +299,13 @@ export class HttpService {
 	}
 
 	saveTask(datos) {
-		let fecha = datos.fecha.slice(0, datos.fecha.indexOf('T'));
+		// let fecha = datos.fecha.slice(0, datos.fecha.indexOf('T'));
     let httpParams = new HttpParams()
       .append('id_task', datos.id_task)
       .append('id_usuario', datos.id_usuario)
       .append('title', datos.title)
 			.append('descrip', datos.descrip)
-			.append('fecha', fecha)
+			.append('fecha', datos.fecha)
       .append('time', datos.time);
 
     const options = {

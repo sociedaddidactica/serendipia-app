@@ -7,7 +7,7 @@
         </ion-row>
         <ion-row class="parent-row2">
             <ion-col class="parent-col">
-                <ion-button fill="clear" (click)="goTo()">
+                <ion-button fill="clear" [disabled]="!ready" (click)="goTo()">
                     <ion-label color="light"> ¡Empezar Ya!</ion-label>
                 </ion-button>
             </ion-col>

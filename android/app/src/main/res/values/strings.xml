@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">SerendipiaApp</string>
-    <string name="title_activity_main">SerendipiaApp</string>
+    <string name="app_name">Serendipia</string>
+    <string name="title_activity_main">Serendipia</string>
     <string name="package_name">com.serendipia.app</string>
     <string name="custom_url_scheme">com.serendipia.app</string>
 	<string name="activity_name">YouTubeActivity</string>

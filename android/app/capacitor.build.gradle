@@ -30,7 +30,7 @@ dependencies {
     implementation "com.soundcloud.android:android-crop:1.0.0@aar"
 }
 apply from: "../../node_modules/cordova-plugin-firebasex/src/android/build.gradle"
-apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "com.google.firebase.crashlytics"
 android {
   buildTypes {
     debug {
@@ -47,7 +47,6 @@ android {
     }
   }
 }
-
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()
 }

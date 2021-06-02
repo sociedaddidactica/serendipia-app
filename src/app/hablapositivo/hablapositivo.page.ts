@@ -30,6 +30,7 @@ export class HablapositivoPage implements OnInit {
   @Input() message_list: any[];
 	 
   diaSelected: string;
+	dateSelected: String;
   
   optionsRange: CalendarComponentOptions;
 	id_grupo_usuario: string;
@@ -46,6 +47,7 @@ export class HablapositivoPage implements OnInit {
 		this.id_grupo_usuario = localStorage.getItem('id_grupo_usuario');
     let date = new Date(), y = date.getFullYear(), m = date.getMonth(), dm = date.getDay();
     let startOfMonth = new Date(y, 1, 1);
+		this.dateSelected = moment().format("YYYY-MM-DD");
     
     this.optionsRange = {
       from: startOfMonth,
@@ -101,9 +103,12 @@ export class HablapositivoPage implements OnInit {
 		this.clearDaySelected();
     if (event.isToday){
       this.diaSelected = "HOY";
+			this.dateSelected = moment().format("YYYY-MM-DD");
     } else {
       this.diaSelected = moment(event.time).format("DD/MM/YYYY");
+			this.dateSelected = moment(event.time).format("YYYY-MM-DD");
     }
+		
     let hoy = moment();
     let time_sel = moment(event.time);
 		let date_selected = time_sel.format("YYYY-MM-DD");
@@ -115,8 +120,6 @@ export class HablapositivoPage implements OnInit {
 	}
 
   ionViewWillEnter(){
-		console.log("ionViewWillEnter");
-		
 		this.clearDaySelected();
 		document.getElementsByClassName("today")[0].classList.add("on-selected");
     this.diaSelected = "HOY";
@@ -134,22 +137,21 @@ export class HablapositivoPage implements OnInit {
 	}
 
 	async adminTask(tipo, id_task, index){
-		console.info("abir modal");
 		let compProp;
 		if (tipo == "A"){
 			compProp = {
-        'id_task': id_task
+        'id_task': id_task,
+				'fecha_task': this.dateSelected
       }
 		} else if (tipo == "E"){
 			compProp = {
         'id_task': id_task,
 				'title_task': this.message_list[index].title,
-				'descrip_task': this.message_list[index].content,
+				'descrip_task': this.message_list[index].content == "null" ? "" :  this.message_list[index].content,
 				'fecha_task': this.message_list[index].date,
 				'time_task': this.message_list[index].time
       }
 		}
-		console.log(compProp);
 		const modal = await this.modalCtrl.create({
       component: ModalNewEventPage,
 			componentProps: compProp
@@ -160,7 +162,7 @@ export class HablapositivoPage implements OnInit {
         this.modalData = modalData.data;
 				this.getMessages(moment().format("MM"));
 				setTimeout(() => {
-					this.getMessageOfDay(moment().format("YYYY-MM-DD"));	
+					this.getMessageOfDay(this.dateSelected);	
 				}, 1000);
       } 
     });

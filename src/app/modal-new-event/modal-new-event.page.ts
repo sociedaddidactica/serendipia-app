@@ -20,8 +20,7 @@ export class ModalNewEventPage implements OnInit {
 
 	frm_task: FormGroup;
 	
-	
-  constructor(public modalCtrl : ModalController,
+	 constructor(public modalCtrl : ModalController,
 							private alertCtrl: AlertController,
 							private formBuilder: FormBuilder,
 							private http: HttpService,
@@ -39,7 +38,7 @@ export class ModalNewEventPage implements OnInit {
 	}
 
 	private buildForm(){
-		let fecha_t = this.fecha_task === undefined ? moment().format("YYYY MM DD") : this.fecha_task;
+		let fecha_t = this.fecha_task === undefined ? moment().format("YYYY/MM/DD") : moment(this.fecha_task, ["YYYY-MM-DD"]).format("YYYY/MM/DD");
 		let time_t = this.time_task === undefined ? moment().format("HH:mm") : moment(this.time_task, ["hh:mm A"]).format("HH:mm");
 
 		this.frm_task = this.formBuilder.group({
@@ -57,7 +56,20 @@ export class ModalNewEventPage implements OnInit {
 
 	async guardarDatos(){
 		let datos_task = new Array();
+		let fecha_t;
 		datos_task = this.frm_task.value;
+		// let fecha = datos.fecha.slice(0, datos.fecha.indexOf('T'));
+		
+		if (datos_task["fecha_task"].indexOf('T') >= 0){
+			let ft = datos_task["fecha_task"].slice(0, datos_task["fecha_task"].indexOf('T'));
+			// fecha_t = moment(ft, ["YYYY-MM-DD"]).format("YYYY/MM/DD");
+			fecha_t = ft;
+		} else {
+			let ft = datos_task["fecha_task"];
+			fecha_t = moment(ft, ["YYYY/MM/DD"]).format("YYYY-MM-DD");
+			
+		}
+		datos_task["fecha_task"] = fecha_t;
 		datos_task["id_task"] = this.id_task;
 		this.saveTask(datos_task);
 		// await this.modalCtrl.dismiss(datos_task);
@@ -90,7 +102,6 @@ export class ModalNewEventPage implements OnInit {
 			myLoading.dismiss();
 			this.util.presentToast("Ha ocurrido un error, inténtelo mas tarde", "danger");
 			console.info("[Error]: " + error.message);
-			// this.modalCtrl.dismiss();
 		});
 	}
 
@@ -144,7 +155,6 @@ export class ModalNewEventPage implements OnInit {
     });
     await alert.present();
   }
-	
 
   ngOnInit() {
   }

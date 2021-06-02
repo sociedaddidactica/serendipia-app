@@ -72,7 +72,7 @@
                   {{ message.time + ":"}}  {{ message.title }}</ion-card-subtitle>
               </ion-card-header>
               <ion-card-content>
-                <p>{{ message.content }}</p>
+                <p>{{ message.content == "null" ? "" :  message.content}}</p>
               </ion-card-content>
             </ion-card>
           </ng-container>

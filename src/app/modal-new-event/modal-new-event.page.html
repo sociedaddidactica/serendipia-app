@@ -36,7 +36,7 @@
 					<ion-col size="12">
 						<ion-item lines="none" class="style-transparent">
 							<ion-label class="custom-ion-label" position="stacked">Descripción</ion-label>
-							<ion-textarea formControlName="descrip_task" class="custom-ion-input" type="text"></ion-textarea>
+							<ion-textarea formControlName="descrip_task" class="custom-ion-input" rows="3" type="text"></ion-textarea>
 						</ion-item>
 						<!-- <ion-label class="lbl_danger"  *ngIf="frm_task.get('descrip_task').errors && frm_task.get('descrip_task').touched">* La descripción es obligatoria </ion-label> -->
 					</ion-col>
@@ -48,7 +48,7 @@
 							<ion-datetime formControlName="fecha_task" class="custom-ion-datetime" color="principal"
 															monthShortNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre" 
 															displayFormat="DD/MM/YYYY" 
-															pickerFormat="DD MMM YYYY" 
+															pickerFormat="DD/MMM/YYYY" 
 															cancelText="Cancelar"
 															doneText="Ok"
 															required>
@@ -61,7 +61,7 @@
 							<ion-label class="custom-ion-label" position="stacked">Hora</ion-label>
 							<ion-datetime formControlName="time_task" class="custom-ion-datetime" color="principal"
 															displayFormat="hh:mm A" 
-															pickerFormat="hh mm A" 
+															pickerFormat="hh:mm A" 
 															cancelText="Cancelar"
 															doneText="Ok"
 															required>
