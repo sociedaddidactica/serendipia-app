@@ -109,10 +109,10 @@ export class HablapositivoPage implements OnInit {
 			this.dateSelected = moment(event.time).format("YYYY-MM-DD");
     }
 		
-    let hoy = moment();
-    let time_sel = moment(event.time);
-		let date_selected = time_sel.format("YYYY-MM-DD");
-    this.getMessageOfDay(date_selected);
+    // let hoy = moment();
+    // let time_sel = moment(event.time);
+		// let date_selected = time_sel.format("YYYY-MM-DD");
+    this.getMessageOfDay(this.dateSelected);
   }
 
 	onMonthChange(event) {
@@ -126,7 +126,9 @@ export class HablapositivoPage implements OnInit {
     let date_selected = moment().format("YYYY-MM-DD");
 		let date = new Date(), mes_selected = date.getMonth() + 1;
     this.getMessages(mes_selected+"");
-		this.getMessageOfDay(date_selected);
+		setTimeout(() => {
+			this.getMessageOfDay(date_selected);	
+		}, 1000);
   }
 
 	clearDaySelected(){

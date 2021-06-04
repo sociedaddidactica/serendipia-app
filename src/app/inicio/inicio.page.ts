@@ -25,6 +25,7 @@ export class InicioPage implements OnInit {
 							) { 
     
 		this.ready = false;
+		this.checkVersionApp();
 		this.clearStorage();
     // this.checkVersionApp();
     //this.checkConexion();
@@ -41,6 +42,7 @@ export class InicioPage implements OnInit {
 
   clearStorage() {
       localStorage.removeItem("version_app");
+			localStorage.removeItem("id_suscripcion");
       localStorage.removeItem("trackList");
       localStorage.removeItem("section_name");
       localStorage.removeItem("section_icon");
@@ -55,13 +57,14 @@ export class InicioPage implements OnInit {
     if (id_user === null) {
         localStorage.setItem('sesion', "I");
         this.page_next = '/subinicio';
+				this.ready = true;
     }
     else {
         this.http.getVersionAppForUser(id_user).then((res: any) => {
-            // Valores de version pueden ser: NULL, FULL, TRIAL, PENDIENT
-						
+            // Valores de version pueden ser: NULL, FULL, TRIAL, PENDIENT, EXPIRATED
             this.version_app = res.versionApp;
             localStorage.setItem('version_app', this.version_app);
+						localStorage.setItem('id_suscripcion', res.id_suscripcion);
             if (localStorage.getItem('sesion') == 'A') {
 								console.info("Sesión Activa");
 								this.fcm.init();
@@ -100,9 +103,8 @@ export class InicioPage implements OnInit {
   }
   
   ionViewDidEnter() {
-		this.checkVersionApp();
-		this.initMultimediaList();
 		SplashScreen.hide();
+		this.initMultimediaList();
   }
 
 	ngOnInit() {

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { CloudService } from '../services/cloud/cloud.service';
-import { HttpService } from '../services/http/http.service';
+// import { CloudService } from '../services/cloud/cloud.service';
+// import { HttpService } from '../services/http/http.service';
 import { UtilsService } from '../services/utils/utils.service';
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+// import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
@@ -22,9 +22,6 @@ export class EjercCorporalesPage implements OnInit {
   constructor(private navCtrl: NavController, 
               private util: UtilsService, 
               private route: ActivatedRoute, 
-              private http: HttpService, 
-              private cloud: CloudService, 
-              private streamingMedia: StreamingMedia,
 							private youTube: YoutubeVideoPlayer
 							) { 
 
@@ -52,43 +49,43 @@ export class EjercCorporalesPage implements OnInit {
 		this.youTube.openVideo(videoId);
 	}
   
-  async playVideo(videoId, index) {
-    let myLoading = await this.util.presentLoading();
-    let play_list = JSON.parse(localStorage.getItem("trackVideoListBck")) === null ? [] : JSON.parse(localStorage.getItem("trackVideoListBck"));
-    let play_list2 = JSON.parse(localStorage.getItem("trackVideoList")) === null ? [] : JSON.parse(localStorage.getItem("trackVideoList"));
-    const options = {
-        successCallback: () => {
-        },
-        errorCallback: (e) => {
-            console.info(e);
-        },
-        shouldAutoClose: true,
-        controls: true
-    };
-    let videoUrl = play_list[index].link_acceso;
-    let result: any;
-    if (videoUrl.indexOf("www.youtube.com") >= 0) {
-        result = await this.cloud.updateUrl(videoId);
-				videoUrl = result.formats[0].url;
-				// result.then(link => {
-				// 	videoUrl = link.formats[0].url;
-				// },
-				// error => {
-				// 	console.info("[Error]: " + error);
-				// });
-    }
-    let self = this;
-    let p1 = new Promise(function (resolve, reject) {
-        resolve(self.streamingMedia.playVideo(videoUrl, options));
-    });
-    p1.then(() => {
-        myLoading.dismiss();
-    }, error => {
-        myLoading.dismiss();
-        console.info(error);
-        this.util.presentToast("Error mostrando el video, intente mas tarde", "danger");
-    });
-  }
+  // async playVideo(videoId, index) {
+  //   let myLoading = await this.util.presentLoading();
+  //   let play_list = JSON.parse(localStorage.getItem("trackVideoListBck")) === null ? [] : JSON.parse(localStorage.getItem("trackVideoListBck"));
+  //   let play_list2 = JSON.parse(localStorage.getItem("trackVideoList")) === null ? [] : JSON.parse(localStorage.getItem("trackVideoList"));
+  //   const options = {
+  //       successCallback: () => {
+  //       },
+  //       errorCallback: (e) => {
+  //           console.info(e);
+  //       },
+  //       shouldAutoClose: true,
+  //       controls: true
+  //   };
+  //   let videoUrl = play_list[index].link_acceso;
+  //   let result: any;
+  //   if (videoUrl.indexOf("www.youtube.com") >= 0) {
+  //       result = await this.cloud.updateUrl(videoId);
+	// 			videoUrl = result.formats[0].url;
+	// 			// result.then(link => {
+	// 			// 	videoUrl = link.formats[0].url;
+	// 			// },
+	// 			// error => {
+	// 			// 	console.info("[Error]: " + error);
+	// 			// });
+  //   }
+  //   let self = this;
+  //   let p1 = new Promise(function (resolve, reject) {
+  //       resolve(self.streamingMedia.playVideo(videoUrl, options));
+  //   });
+  //   p1.then(() => {
+  //       myLoading.dismiss();
+  //   }, error => {
+  //       myLoading.dismiss();
+  //       console.info(error);
+  //       this.util.presentToast("Error mostrando el video, intente mas tarde", "danger");
+  //   });
+  // }
 
   goBack() {
       this.util.loadtCtrl.dismiss();

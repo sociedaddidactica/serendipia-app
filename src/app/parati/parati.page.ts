@@ -54,7 +54,7 @@ export class ParatiPage implements OnInit {
             break;
     }
 
-		if (versionApp == "PENDIENT"){
+		if (versionApp == "PENDIENT" || versionApp == "EXPIRATED"){
 			this.router.navigate(['/main/configuracion']);
 		} else {
 			this.getIdSection(name_section).then((res:any) => {

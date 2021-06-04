@@ -1,6 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { File } from '@ionic-native/file/ngx';
+// import { File } from '@ionic-native/file/ngx';
 import { RouteReuseStrategy } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -16,13 +16,13 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
-import { FilePath } from '@ionic-native/file-path/ngx';
+// import { FilePath } from '@ionic-native/file-path/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
 
 import { StoreModule } from '@ngrx/store';
 import { mediaStateReducer } from './services/store/store.service';
-import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
+// import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
@@ -50,13 +50,13 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
     { provide: LOCALE_ID, useValue: 'es-ES' },
     HttpService,
     WebView, 
-    File,
+    // File,
     FileTransfer,
-    FilePath,
+    // FilePath,
     Camera, 
     Crop,
     NativePageTransitions,
-    StreamingMedia,
+    // StreamingMedia,
     Geolocation,
     NativeGeocoder,
 		FirebaseX,

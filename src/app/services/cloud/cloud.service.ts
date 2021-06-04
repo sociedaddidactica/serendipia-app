@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { HttpService } from '../http/http.service';
-import * as yt from 'ionic-youtube-streams';
+// import * as yt from 'ionic-youtube-streams';
 
 @Injectable({
   providedIn: 'root'
@@ -88,21 +88,21 @@ export class CloudService {
     var list2 = [];
     let link: any;
     let getlink: any;
-    for (let index = 0; index < play_list.length; index++) {
-        const element = play_list[index];
-        link = await this.updateUrl(element.ruta_archivo);
-				element.link_acceso = link.formats[0].url;
-				list2.push(element);
-				localStorage.setItem('trackVideoListBck', JSON.stringify(list2));           
-    }
+    // for (let index = 0; index < play_list.length; index++) {
+    //     const element = play_list[index];
+    //     link = await this.updateUrl(element.ruta_archivo);
+		// 		element.link_acceso = link.formats[0].url;
+		// 		list2.push(element);
+		// 		localStorage.setItem('trackVideoListBck', JSON.stringify(list2));           
+    // }
   }
 
-  async updateUrl(videoId) {
-    return new Promise(function (resolve) {
-        resolve(yt.info(videoId));
-    });
-    // return await yt.info(videoId);
-  }
+  // async updateUrl(videoId) {
+  //   return new Promise(function (resolve) {
+  //       resolve(yt.info(videoId));
+  //   });
+  //   // return await yt.info(videoId);
+  // }
 
 	
 }

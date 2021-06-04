@@ -40,7 +40,7 @@ export class MainPage implements OnInit {
         this.tab_musica = "/main/musica";
         this.tab_diario = "/main/midiario";
     }
-    else if (versionApp == "PENDIENT") {
+    else if (versionApp == "PENDIENT" || versionApp == "EXPIRATED") {
         this.tab_categorias = "/main/configuracion";
         this.tab_musica = "/main/configuracion";
         this.tab_diario = "/main/configuracion";

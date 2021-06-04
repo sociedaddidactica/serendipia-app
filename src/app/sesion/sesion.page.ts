@@ -52,7 +52,9 @@ export class SesionPage implements OnInit {
                 // Guardo las variables de sesion para la app en LocalStorage
                 localStorage.setItem('id_usuario', res.usuario.id);
                 localStorage.setItem('nombre', res.usuario.nombre_apellido);
+								localStorage.setItem('pais', res.usuario.pais);
                 localStorage.setItem('version_app', res.version_app);
+								localStorage.setItem('id_suscripcion', res.id_suscripcion);
 								localStorage.setItem('id_grupo_usuario', res.grupos);
                 localStorage.setItem('sesion', "A");
                 this.util.updateAccess(res.usuario.id);

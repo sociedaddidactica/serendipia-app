@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { AlertController, Platform } from '@ionic/angular';
 import { Location } from '@angular/common';
 import { AppVersion } from '@ionic-native/app-version/ngx';
@@ -52,16 +52,12 @@ export class AppComponent {
 	
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-        if (this._location.isCurrentPathEqualTo('/inicio') || this._location.isCurrentPathEqualTo('/main/parati')) {
+        if (this._location.isCurrentPathEqualTo('/inicio') || this._location.isCurrentPathEqualTo('/main/parati') || this._location.isCurrentPathEqualTo('/main/categorias') || this._location.isCurrentPathEqualTo('/main/musica') || this._location.isCurrentPathEqualTo('/main/midiario')  || this._location.isCurrentPathEqualTo('/main/informacion')  || this._location.isCurrentPathEqualTo('/main/configuracion')) {
             // Show Exit Alert!
-            console.info('Show Exit Alert!');
             this.showExitConfirm();
             processNextHandler();
-        } else if (this._location.isCurrentPathEqualTo('/main/categorias') || this._location.isCurrentPathEqualTo('/main/musica') || this._location.isCurrentPathEqualTo('/main/midiario')  || this._location.isCurrentPathEqualTo('/main/informacion')  || this._location.isCurrentPathEqualTo('/main/configuracion')) {
-          // nothing 
         } else {
             // Navigate to back page
-            console.info('Navigate to back page');
             this._location.back();
         }
     });
@@ -101,8 +97,4 @@ export class AppComponent {
       });
   }
 
-  ngOnInit(): void {
-    
-    
-  }
 }

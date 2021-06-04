@@ -340,4 +340,30 @@ export class HttpService {
     return this.http.post(url, httpParams, options).toPromise();
   }
 
+	getPaises(){
+		// let httpParams = new HttpParams()
+		// .append('id_usuario', id_usuario);
+    const options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        // params: httpParams,
+    };
+    const url = this.url_base + '/getpaises';
+    return this.http.get(url, options).toPromise();
+	}
+
+	getPlanes(){
+		// let httpParams = new HttpParams()
+		// .append('id_usuario', id_usuario);
+    const options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        // params: httpParams,
+    };
+    const url = this.url_base + '/getplanes';
+    return this.http.get(url, options).toPromise();
+	}
+
 }

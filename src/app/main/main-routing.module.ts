@@ -1,14 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { MainPage } from './main.page';
-
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: MainPage
-//   }
-// ];
 
 const routes: Routes = [
     {
@@ -17,71 +9,87 @@ const routes: Routes = [
       children: [
         {
           path: 'parati',
-          loadChildren: () => import('../parati/parati.module').then(m => m.ParatiPageModule)
+          loadChildren: () => import('../parati/parati.module').then(m => m.ParatiPageModule),
+					data: { preload: true },
         },
         {
           path: 'categorias',
-          loadChildren: () => import('../categorias/categorias.module').then(m => m.CategoriasPageModule)
+          loadChildren: () => import('../categorias/categorias.module').then(m => m.CategoriasPageModule),
+					data: { preload: true },
         },
         {
           path: 'erradicaransiedad',
-          loadChildren: () => import('../erradicaransiedad/erradicaransiedad.module').then( m => m.ErradicaransiedadPageModule)
+          loadChildren: () => import('../erradicaransiedad/erradicaransiedad.module').then( m => m.ErradicaransiedadPageModule),
+					data: { preload: false },
         },
         {
           path: 'sub-section/:idFather',
-          loadChildren: () => import('../sub-section/sub-section.module').then( m => m.SubSectionPageModule)
+          loadChildren: () => import('../sub-section/sub-section.module').then( m => m.SubSectionPageModule),
+					data: { preload: false },
+					
         },
         {
           path: 'meditacion',
-          loadChildren: () => import('../meditacion/meditacion.module').then( m => m.MeditacionPageModule)
+          loadChildren: () => import('../meditacion/meditacion.module').then( m => m.MeditacionPageModule),
+					data: { preload: false },
         },
         {
           path: 'hipnosis',
-          loadChildren: () => import('../hipnosis/hipnosis.module').then( m => m.HipnosisPageModule)
+          loadChildren: () => import('../hipnosis/hipnosis.module').then( m => m.HipnosisPageModule),
+					data: { preload: false },
+
         },
         {
           path: 'ejerc-corporales/:idSection',
-          loadChildren: () => import('../ejerc-corporales/ejerc-corporales.module').then( m => m.EjercCorporalesPageModule)
+          loadChildren: () => import('../ejerc-corporales/ejerc-corporales.module').then( m => m.EjercCorporalesPageModule),
+					data: { preload: false },
         },
         {
           path: 'musicplayer/:idSection',
-          loadChildren: () => import('../musicplayer/musicplayer.module').then( m => m.MusicplayerPageModule)
+          loadChildren: () => import('../musicplayer/musicplayer.module').then( m => m.MusicplayerPageModule),
+					data: { preload: true },
         },
         {
           path: 'musicplayer-dark/:idSection',
-          loadChildren: () => import('../musicplayer-dark/musicplayer-dark.module').then( m => m.MusicplayerDarkPageModule)
+          loadChildren: () => import('../musicplayer-dark/musicplayer-dark.module').then( m => m.MusicplayerDarkPageModule),
+					data: { preload: false },
         },
         {
           path: 'musica',
-          loadChildren: () => import('../musica/musica.module').then( m => m.MusicaPageModule)
+          loadChildren: () => import('../musica/musica.module').then( m => m.MusicaPageModule),
+					data: { preload: true },
         },
         {
           path: 'midiario',
-          loadChildren: () => import('../midiario/midiario.module').then( m => m.MidiarioPageModule)
+          loadChildren: () => import('../midiario/midiario.module').then( m => m.MidiarioPageModule),
+					data: { preload: true },
         },
         {
           path: 'cuaderno',
-          loadChildren: () => import('../cuaderno/cuaderno.module').then( m => m.CuadernoPageModule)
+          loadChildren: () => import('../cuaderno/cuaderno.module').then( m => m.CuadernoPageModule),
+					data: { preload: false },
         },
         {
           path: 'editor/:idNote',
-          loadChildren: () => import('../editor/editor.module').then( m => m.EditorPageModule)
+          loadChildren: () => import('../editor/editor.module').then( m => m.EditorPageModule),
+					data: { preload: false },
         },
         {
           path: 'hablapositivo',
-          loadChildren: () => import('../hablapositivo/hablapositivo.module').then( m => m.HablapositivoPageModule)
+          loadChildren: () => import('../hablapositivo/hablapositivo.module').then( m => m.HablapositivoPageModule),
+					data: { preload: true },
         },
         {
           path: 'informacion',
-          loadChildren: () => import('../informacion/informacion.module').then( m => m.InformacionPageModule)
+          loadChildren: () => import('../informacion/informacion.module').then( m => m.InformacionPageModule),
+					data: { preload: false },
         },
         {
           path: 'configuracion',
-          loadChildren: () => import('../configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+          loadChildren: () => import('../configuracion/configuracion.module').then( m => m.ConfiguracionPageModule),
+					data: { preload: false },
         },
 				
-        
-        
         {
           path: '',
           redirectTo: 'parati',

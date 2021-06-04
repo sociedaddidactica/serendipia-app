@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
-import { File } from '@ionic-native/file/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ToastController } from '@ionic/angular';
 
@@ -16,7 +15,6 @@ export class PhotoService {
     constructor(private camera: Camera,
                 private webView: WebView,
                 private crop: Crop,
-                private file: File,
                 private toastCtrl: ToastController, 
                 
     ) { }
@@ -40,25 +38,10 @@ export class PhotoService {
         };
 
         this.camera.getPicture(options).then((imagePath) => {
-            
-            // this.photos.filepath = imagePath;
-            // this.photos.name = this.createFileName();
-            // this.photos.webviewPath = this.webView.convertFileSrc(imagePath);
-            
             this.cropImage(imagePath);
-
-            // var profilePic = document.getElementById('profilePic');
-            // profilePic.style.border = '1px solid var(--main-color)';
-            // profilePic.style.width = '100px';
-            // profilePic.style.height = '100px';
-
         }).catch(e => {
           console.info(e);
         });
-
-        
-
-        // return this.photos;
     }
 
     cropImage(fileUrl) {
@@ -73,40 +56,33 @@ export class PhotoService {
                 this.photos.filepath = newPath;
                 this.photos.name = this.createFileName();
                 this.photos.webviewPath = this.webView.convertFileSrc(newPath);
-
-                console.info("filepath" + this.photos.filepath);
-                console.info("webviewPath" + this.photos.webviewPath);
-
-                // this.showCroppedImage(newPath.split('?')[0])
             },
             error => {
                 this.presentToast(JSON.stringify(error), "danger");
                 console.info('Error cropping image' + JSON.stringify(error));
         });
-        // return photo;
     }
 
-    showCroppedImage(ImagePath) {
-        // this.isLoading = true;
-        var photo: Photo;
-        var copyPath = ImagePath;
-        var splitPath = copyPath.split('/');
-        var imageName = splitPath[splitPath.length - 1];
-        var filePath = ImagePath.split(imageName)[0];
+    // showCroppedImage(ImagePath) {
+    //     var photo: Photo;
+    //     var copyPath = ImagePath;
+    //     var splitPath = copyPath.split('/');
+    //     var imageName = splitPath[splitPath.length - 1];
+    //     var filePath = ImagePath.split(imageName)[0];
     
-        this.file.readAsDataURL(filePath, imageName).then(base64 => {
-            // this.croppedImagepath = base64;
+    //     this.file.readAsDataURL(filePath, imageName).then(base64 => {
+    //         // this.croppedImagepath = base64;
             
-            // this.photos.webviewPath = this.webView.convertFileSrc(base64);
+    //         // this.photos.webviewPath = this.webView.convertFileSrc(base64);
 
-        //   this.isLoading = false;
-        }, error => {
-          alert('Error in showing image' + error);
-        //   this.isLoading = false;
-        });
+    //     //   this.isLoading = false;
+    //     }, error => {
+    //       alert('Error in showing image' + error);
+    //     //   this.isLoading = false;
+    //     });
 
-        // return photo;
-    }
+    //     // return photo;
+    // }
 
     async presentToast(message: string, color: string) {
         const toast = await this.toastCtrl.create({
