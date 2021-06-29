@@ -43,12 +43,14 @@ export class InicioPage implements OnInit {
   clearStorage() {
       localStorage.removeItem("version_app");
 			localStorage.removeItem("id_suscripcion");
+			localStorage.removeItem("fecha_corte");
       localStorage.removeItem("trackList");
       localStorage.removeItem("section_name");
       localStorage.removeItem("section_icon");
       localStorage.removeItem("subsection_icon");
 			localStorage.removeItem("hp_message_list");
-			
+			localStorage.removeItem("planes");
+			localStorage.removeItem("paises");
   }
 
   // Verifica si el usuario está en periodo de prueba o ya canceló la suscripción
@@ -65,6 +67,8 @@ export class InicioPage implements OnInit {
             this.version_app = res.versionApp;
             localStorage.setItem('version_app', this.version_app);
 						localStorage.setItem('id_suscripcion', res.id_suscripcion);
+						localStorage.setItem('id_tipo_suscripcion', res.id_tipo_suscripcion);
+						localStorage.setItem('fecha_corte', res.fecha_corte);
             if (localStorage.getItem('sesion') == 'A') {
 								console.info("Sesión Activa");
 								this.fcm.init();
@@ -105,7 +109,13 @@ export class InicioPage implements OnInit {
   ionViewDidEnter() {
 		SplashScreen.hide();
 		this.initMultimediaList();
+		this.initDataSelects();
   }
+
+	initDataSelects() {
+		this.cloudService.getPaises();
+		this.cloudService.getPlanes();
+	}
 
 	ngOnInit() {
 		

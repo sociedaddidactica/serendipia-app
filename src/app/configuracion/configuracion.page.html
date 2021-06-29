@@ -1,5 +1,10 @@
 <ion-content>
   <div class="div-top">
+		<ion-fab vertical="top" horizontal="end">
+			<ion-fab-button color="gris-plomo" size="small" (click)="cerrarSesion()"> 
+				<ion-icon name="exit-outline"></ion-icon>
+			</ion-fab-button>
+		</ion-fab>
     <ion-grid fixed>
       <ion-row>
         <ion-col size="12">
@@ -15,7 +20,8 @@
             <ion-col class="align-center">
                 <div class="content-camera">
                     <div class="content-photo">
-                        <img id="profilePic" class="img-perfil" [src]="photoService.photos.webviewPath">
+                        <img id="profilePic" class="img-perfil"  [src]="photoService.photos.webviewPath">
+												<!-- <img id="profilePic" class="img-perfil"  [src]="photoProfile.webviewPath"> -->
                     </div>
                     <ion-fab-button (click)="presentAlertConfirm()" size="small" class="ionfab" color="secondary">
                         <ion-icon name="camera"></ion-icon>
@@ -25,7 +31,7 @@
         </ion-row>
         <ion-row>
 					<ion-col>
-            <form [formGroup]="frm_usuario" (ngSubmit)="guardarDatos()">
+            <form [formGroup]="frm_usuario" (ngSubmit)="updateDatos()">
             <ion-item lines="none" class="style-transparent">
                 <ion-label class="custom-ion-label" position="stacked">Nombre y Apellido</ion-label>
                 <ion-input formControlName="nombre_apellido" class="custom-ion-input" type="text" required></ion-input>
@@ -35,15 +41,16 @@
             <ion-item lines="none" class="style-transparent">
                 <ion-label class="custom-ion-label" position="stacked">Pais</ion-label>
                 <ion-select formControlName="pais" name="pais" class="custom-ion-select" placeholder="Seleccione" cancelText="Cancelar" interface="popover">
-                  <ion-select-option *ngFor="let obj_pais of paises" [value]="obj_pais.code"  >{{obj_pais.name}}</ion-select-option>  
+                  <ion-select-option *ngFor="let obj_pais of paises" [value]="obj_pais.code">{{obj_pais.name}}</ion-select-option>  
                 </ion-select>
             </ion-item>
             <ion-label class="lbl_danger" *ngIf="frm_usuario.get('pais').errors?.required && (frm_usuario.get('pais').touched)">* El pais es obligatoria </ion-label>
             
 						<ion-item lines="none" class="style-transparent">
 							<ion-label class="custom-ion-label" position="stacked">Plan</ion-label>
-							<ion-select formControlName="plan" name="plan" class="custom-ion-select" placeholder="Seleccione" cancelText="Cancelar" interface="popover">
-								<ion-select-option *ngFor="let plan of planes" [value]="plan.id">{{plan.name + " - " + plan.precio}}</ion-select-option>  
+							<ion-select formControlName="plan" name="plan" class="custom-ion-select" placeholder="Seleccione" cancelText="Cancelar" interface="popover" (ionChange)="changePlan($event)" [disabled]="!enable_chang_plan">
+								<!-- <ion-select-option *ngFor="let plan of planes" [value]="plan.tipo">{{plan.iapp.name }} - {{ plan.iapp.price }} {{ plan.iapp.currency }}</ion-select-option>   -->
+								<ion-select-option *ngFor="let plan of planes" [value]="plan.tipo">{{plan.name }} - {{ plan.price }} {{ plan.currency }}</ion-select-option>  
 							</ion-select>
 						</ion-item>
 						<ion-label class="lbl_danger" *ngIf="frm_usuario.get('plan').errors?.required && (frm_usuario.get('plan').touched)">* El plan es obligatoria </ion-label>
@@ -58,6 +65,10 @@
 							<ion-col class="align-center">
 								<ion-button type="submit" [disabled]="frm_usuario.invalid" shape="round" color="principal" class="btn-turquesa lbl-sentence-style">
 										Guardar</ion-button>
+							</ion-col>
+							<ion-col class="align-center" *ngIf="visible_pagar">
+								<ion-button [disabled]="!enable_pagar" shape="round" color="principal" class="btn-turquesa lbl-sentence-style" (click)="purchase()">
+										Pagar</ion-button>
 							</ion-col>
             </ion-row>
         </form>

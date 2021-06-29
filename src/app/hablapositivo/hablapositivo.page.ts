@@ -139,7 +139,8 @@ export class HablapositivoPage implements OnInit {
 	}
 
 	async adminTask(tipo, id_task, index){
-		let compProp;
+		let compProp = {};
+		
 		if (tipo == "A"){
 			compProp = {
         'id_task': id_task,

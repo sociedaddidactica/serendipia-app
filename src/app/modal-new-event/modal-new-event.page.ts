@@ -12,11 +12,11 @@ import { UtilsService } from '../services/utils/utils.service';
 })
 export class ModalNewEventPage implements OnInit {
 
-	@Input() id_task: string;
-	@Input() title_task: string;
-	@Input() descrip_task: string;
-	@Input() fecha_task: string;
-	@Input() time_task: string;
+	@Input() p_id_task: string = "";
+	@Input() p_title_task: string = "";
+	@Input() p_descrip_task: string = "";
+	@Input() p_fecha_task: string = "";
+	@Input() p_time_task: string = "";
 
 	frm_task: FormGroup;
 	
@@ -28,22 +28,27 @@ export class ModalNewEventPage implements OnInit {
 							navParams: NavParams
 							) {
 		
-		this.id_task = navParams.get('id_task');
-		this.title_task = navParams.get('title_task');
-		this.descrip_task = navParams.get('descrip_task');
-		this.fecha_task = navParams.get('fecha_task');
-		this.time_task = navParams.get('time_task');
+		this.p_id_task = navParams.get('id_task');
+		this.p_title_task = navParams.get('title_task');
+		this.p_descrip_task = navParams.get('descrip_task');
+		this.p_fecha_task = navParams.get('fecha_task');
+		this.p_time_task = navParams.get('time_task');
+		
 		this.buildForm();
 	
 	}
 
-	private buildForm(){
-		let fecha_t = this.fecha_task === undefined ? moment().format("YYYY/MM/DD") : moment(this.fecha_task, ["YYYY-MM-DD"]).format("YYYY/MM/DD");
-		let time_t = this.time_task === undefined ? moment().format("HH:mm") : moment(this.time_task, ["hh:mm A"]).format("HH:mm");
+	buildForm(){
+		let fecha_t = this.p_fecha_task === undefined ? moment().format("YYYY/MM/DD") : moment(this.p_fecha_task, ["YYYY-MM-DD"]).format("YYYY/MM/DD");
+		let time_t = this.p_time_task === undefined ? moment().format("HH:mm") : moment(this.p_time_task, ["hh:mm A"]).format("HH:mm");
+
+		console.info(fecha_t);
+		console.info(time_t);
+		console.info(this.p_title_task);
 
 		this.frm_task = this.formBuilder.group({
-			title_task: [this.title_task, Validators.required],
-			descrip_task: [this.descrip_task],
+			title_task: [this.p_title_task, Validators.required],
+			descrip_task: [this.p_descrip_task],
 			fecha_task: [fecha_t, Validators.required],
 			time_task: [time_t, Validators.required],
 		});	
@@ -70,7 +75,7 @@ export class ModalNewEventPage implements OnInit {
 			
 		}
 		datos_task["fecha_task"] = fecha_t;
-		datos_task["id_task"] = this.id_task;
+		datos_task["id_task"] = this.p_id_task;
 		this.saveTask(datos_task);
 		// await this.modalCtrl.dismiss(datos_task);
 	}
@@ -109,7 +114,7 @@ export class ModalNewEventPage implements OnInit {
     const myLoading = await this.util.presentLoading();
     let id_usuario = localStorage.getItem('id_usuario');
     const datos = {
-      id_task: this.id_task,
+      id_task: this.p_id_task,
       id_usuario: id_usuario,
     };
 

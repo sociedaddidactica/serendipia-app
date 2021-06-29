@@ -18,6 +18,7 @@ export class EjercCorporalesPage implements OnInit {
   section_name: string;
   section_icon: string;
   subsection_icon: string;
+	id_user: string;
 
   constructor(private navCtrl: NavController, 
               private util: UtilsService, 
@@ -34,6 +35,7 @@ export class EjercCorporalesPage implements OnInit {
       duration: -1
     };
     this.play_list = [this.video];
+		this.id_user = localStorage.getItem("id_usuario");
     this.section_name = localStorage.getItem("section_name");
     this.section_icon = localStorage.getItem("section_icon");
     this.subsection_icon = localStorage.getItem("subsection_icon");
@@ -46,7 +48,9 @@ export class EjercCorporalesPage implements OnInit {
   }
 
 	playYoutubeVideo(videoId){
-		this.youTube.openVideo(videoId);
+		console.info(videoId);
+		this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "5", "id_objeto": videoId.id_producto});
+		this.youTube.openVideo(videoId.ruta_archivo);
 	}
   
   // async playVideo(videoId, index) {

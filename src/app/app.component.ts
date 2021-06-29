@@ -76,7 +76,7 @@ export class AppComponent {
 
   showExitConfirm() {
       this.alertController.create({
-          header: 'Serendipia App',
+          header: 'Serendipia',
           message: '¿Deseas salir de la app?',
           backdropDismiss: false,
           buttons: [{

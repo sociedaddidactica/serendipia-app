@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpService } from '../services/http/http.service';
+import { UtilsService } from '../services/utils/utils.service';
 
 @Component({
   selector: 'app-meditacion',
@@ -9,7 +10,11 @@ import { HttpService } from '../services/http/http.service';
 })
 export class MeditacionPage implements OnInit {
 
-  constructor(private navCtrl: NavController, private http: HttpService) { }
+	id_user: string;
+  constructor(private navCtrl: NavController, private http: HttpService, private util: UtilsService) { 
+		this.id_user = localStorage.getItem("id_usuario");
+	}
+
 
   goBack() {
     this.navCtrl.back();
@@ -22,6 +27,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("Reto 7 días meditación").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -32,6 +38,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("El triángulo del éxito").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -42,6 +49,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("4 meditaciones para transformar tu vida").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -52,6 +60,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("Iniciación a la meditación").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -62,6 +71,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("Ansiedad, estrés y depresión").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -72,6 +82,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("Salud plena").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -82,6 +93,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("Éxito y realización").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });
@@ -92,6 +104,7 @@ export class MeditacionPage implements OnInit {
               this.getIdSection("Sueño y día perfecto").then((res:any) => {
                   let section = res.section;
                   this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+									this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
               }, (error) => {
                   console.info("[Error]: " + JSON.stringify(error));
               });

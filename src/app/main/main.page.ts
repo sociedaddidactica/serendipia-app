@@ -44,6 +44,7 @@ export class MainPage implements OnInit {
         this.tab_categorias = "/main/configuracion";
         this.tab_musica = "/main/configuracion";
         this.tab_diario = "/main/configuracion";
+				this.active("configuracion");
     }
 	}
 
@@ -157,7 +158,13 @@ export class MainPage implements OnInit {
 	}
 
 	tabChange(event) {
-			this.active(event.tab);
+		this.active(event.tab);
+		// let versionApp = localStorage.getItem("version_app");
+    // if (versionApp == "FULL" || versionApp == "TRIAL") {
+			
+		// } else {
+		// 	// this.active('configuracion');
+		// }
 	}
 
   ngOnInit() {

@@ -96,7 +96,7 @@ export class HttpService {
   }
 
   uploadProfilePic(photoProf: Photo, id_user: any) {
-      console.info("foto in upload funcion: " + photoProf.filepath);
+    console.info("foto in upload funcion: " + photoProf.filepath);
     const fileTransfer: FileTransferObject = this.transfer.create();
     const url = this.url_base + '/uploadprofilepic';
     const pictureName = id_user + "_" + photoProf.name;
@@ -184,9 +184,9 @@ export class HttpService {
   }
 
   saveInteraction(datos) {
-    const param1: string = datos[0].id_usuario;
-    const param2: string = datos[0].id_tipo_interaccion;
-    const param3: string = datos[0].id_objeto;
+    const param1: string = datos.id_usuario;
+    const param2: string = datos.id_tipo_interaccion;
+    const param3: string = datos.id_objeto;
     
     let httpParams = new HttpParams()
       .append('id_usuario', param1)
@@ -365,5 +365,26 @@ export class HttpService {
     const url = this.url_base + '/getplanes';
     return this.http.get(url, options).toPromise();
 	}
+
+	updatePerfil(datos) {
+    let httpParams = new HttpParams()
+			.append('id_user', datos.id_usuario)
+      .append('nombre_apellido', datos.nombre_apellido)
+      .append('pais', datos.pais)
+      .append('change_plan', datos.change_plan)
+      .append('plan', datos.plan_tipo)
+			.append('plan_old', datos.plan_old);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/updateperfil';
+
+    return this.http.post(url, httpParams, options).toPromise();
+  }
 
 }

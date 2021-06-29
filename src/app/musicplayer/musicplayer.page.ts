@@ -17,6 +17,7 @@ import * as moment from 'moment';
 })
 
 export class MusicplayerPage implements OnInit {
+	id_user: string; 
   section_name: string;
   section_icon: string;
   file: { url: string; name: string; duration: number; };
@@ -37,6 +38,7 @@ export class MusicplayerPage implements OnInit {
               private cloudService: CloudService, 
               private store: Store<any>) { 
 
+		this.id_user = localStorage.getItem("id_usuario");
     this.section_name = localStorage.getItem("section_name");
     this.section_icon = localStorage.getItem("section_icon");
     this.file = {
@@ -129,6 +131,7 @@ export class MusicplayerPage implements OnInit {
     this.currentFile = { index, file };
     this.current_track_title = nombre;
     this.playStream(file.url, loader);
+		this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "5", "id_objeto": file.id_prod});
     if (!this.show_toolbar) {
         this.show_toolbar = true;
     }

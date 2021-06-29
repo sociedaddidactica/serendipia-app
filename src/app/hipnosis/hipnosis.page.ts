@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpService } from '../services/http/http.service';
+import { UtilsService } from '../services/utils/utils.service';
 
 @Component({
   selector: 'app-hipnosis',
@@ -8,9 +9,14 @@ import { HttpService } from '../services/http/http.service';
   styleUrls: ['./hipnosis.page.scss'],
 })
 export class HipnosisPage implements OnInit {
+	id_user: string;
+  
+	constructor(private navCtrl: NavController, 
+              private http: HttpService,
+							private util: UtilsService) {
 
-  constructor(private navCtrl: NavController, 
-              private http: HttpService) { }
+		this.id_user = localStorage.getItem("id_usuario");
+	}
 
   goBack() {
     this.navCtrl.back();
@@ -66,6 +72,7 @@ export class HipnosisPage implements OnInit {
       this.getIdSection(name_section).then((res:any) => {
           let section = res.section;
           this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+					this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
       }, (error) => {
           console.info("[Error]: " + JSON.stringify(error));
       });

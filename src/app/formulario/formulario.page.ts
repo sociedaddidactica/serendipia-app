@@ -80,6 +80,10 @@ export class FormularioPage implements OnInit {
                     );
                     this.frm_usuario.reset();
                     this.photoProfile = {name: "person.jpg", filepath: "/assets/ICONS/person.jpg", webviewPath: "/assets/ICONS/person.jpg"};
+										this.photoService.photos = this.photoProfile;
+										let interaction = { "id_usuario": res.id_user, "id_tipo_interaccion": "3", "id_objeto": res.id_user };
+										this.util.saveInteraction(interaction); // 3=Registro de usuario 
+
                     setTimeout(()=>{
                         this.navCtrl.navigateForward('/introduccion/'+idUser);
                     }, 3000);
@@ -165,6 +169,7 @@ export class FormularioPage implements OnInit {
         this.getCoordinates();
         this.frm_usuario.reset();
         this.photoProfile = { name: "person.jpg", filepath: "/assets/ICONS/person.jpg", webviewPath: "/assets/ICONS/person.jpg" };
+				this.photoService.photos = this.photoProfile;
     }
  
 }

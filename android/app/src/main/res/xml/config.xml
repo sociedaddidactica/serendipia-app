@@ -29,6 +29,10 @@
     <param name="android-package" value="cordova.plugin.nativegeocoder.NativeGeocoder"/>
   </feature>
 
+  <feature name="InAppBillingPlugin">
+    <param name="android-package" value="cc.fovea.PurchasePlugin"/>
+  </feature>
+
   <feature name="YoutubeVideoPlayer">
     <param name="android-package" value="com.bunkerpalace.cordova.YoutubeVideoPlayer"/>
   </feature>

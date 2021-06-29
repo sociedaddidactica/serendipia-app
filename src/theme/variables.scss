@@ -8,14 +8,22 @@
    /* color main of the app */
    //--main-color: #00C4CC;
 
-   --main-color: #00C4CC;
+	--main-color: #00C4CC;
 
-   --ion-color-principal: #00C4CC;
-   --ion-color-principal-rgb: 0,196,204;
-   --ion-color-principal-contrast: #ffffff;
-   --ion-color-principal-contrast-rgb: 255,255,255;
-   --ion-color-principal-shade: #00acb4;
-   --ion-color-principal-tint: #1acad1;
+	--ion-color-principal: #00C4CC;
+	--ion-color-principal-rgb: 0,196,204;
+	--ion-color-principal-contrast: #ffffff;
+	--ion-color-principal-contrast-rgb: 255,255,255;
+	--ion-color-principal-shade: #00acb4;
+	--ion-color-principal-tint: #1acad1;
+
+	/** gris plomo **/
+	--ion-color-gris-plomo: #424242;
+  --ion-color-gris-plomo-rgb: 66,66,66;
+  --ion-color-gris-plomo-contrast: #ffffff;
+  --ion-color-gris-plomo-contrast-rgb: 255,255,255;
+  --ion-color-gris-plomo-shade: #3a3a3a;
+  --ion-color-gris-plomo-tint: #555555;
   
    /** primary **/
   --ion-color-primary: #3880ff;
@@ -265,7 +273,16 @@
     --ion-color-contrast-rgb: var(--ion-color-principal-contrast-rgb);
     --ion-color-shade: var(--ion-color-principal-shade);
     --ion-color-tint: var(--ion-color-principal-tint);
-  }
+}
+
+.ion-color-gris-plomo {
+	--ion-color-base: var(--ion-color-gris-plomo);
+	--ion-color-base-rgb: var(--ion-color-gris-plomo-rgb);
+	--ion-color-contrast: var(--ion-color-gris-plomo-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-gris-plomo-contrast-rgb);
+	--ion-color-shade: var(--ion-color-gris-plomo-shade);
+	--ion-color-tint: var(--ion-color-gris-plomo-tint);
+}
 
 @font-face {
     font-family: "Montserrat-Regular";

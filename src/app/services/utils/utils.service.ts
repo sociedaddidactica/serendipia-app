@@ -38,4 +38,13 @@ export class UtilsService {
       console.info("[Error]: " + error.message);
     });
   }
+
+	saveInteraction(datos) {
+		this.http.saveInteraction(datos).then((res: any) => {
+      console.info(res.message);
+    },
+    (error) => {
+      console.info("[Error]: " + error.message);
+    });
+	}
 }

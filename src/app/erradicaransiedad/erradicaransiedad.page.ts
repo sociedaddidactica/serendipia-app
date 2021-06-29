@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NavController } from '@ionic/angular';
 import { CloudService } from '../services/cloud/cloud.service';
 import { HttpService } from '../services/http/http.service';
+import { UtilsService } from '../services/utils/utils.service';
 
 @Component({
   selector: 'app-erradicaransiedad',
@@ -12,12 +13,15 @@ import { HttpService } from '../services/http/http.service';
 export class ErradicaransiedadPage implements OnInit {
   dangerousVideoUrl: string;
   trustedVideoUrl: any;
+	id_user: string;
 
   constructor(private navCtrl: NavController, 
               private domSanitizer: DomSanitizer, 
               private http: HttpService, 
+							private util: UtilsService,
               private cloud: CloudService) { 
     this.updateVideoUrl('_GusQwhAl3Q');
+		this.id_user = localStorage.getItem("id_usuario");
   }
 
   updateVideoUrl(id) {
@@ -36,6 +40,7 @@ export class ErradicaransiedadPage implements OnInit {
             this.getIdSection("Audios Semanales").then((res: any) => {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/sub-section/" + section.id_seccion);
+								this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
             }, (error) => {
                 console.info("[Error]: " + JSON.stringify(error));
             });
@@ -46,6 +51,7 @@ export class ErradicaransiedadPage implements OnInit {
             this.getIdSection("Meditación guiada").then((res: any) => {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+								this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
             }, (error) => {
                 console.info("[Error]: " + JSON.stringify(error));
             });
@@ -56,6 +62,7 @@ export class ErradicaransiedadPage implements OnInit {
             this.getIdSection("Tu lugar apartado TLA").then((res:any) => {
                 let section = res.section;
                 this.navCtrl.navigateForward("/main/musicplayer/" + section.id_seccion);
+								this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
             }, (error) => {
                 console.info("[Error]: " + JSON.stringify(error));
             });
@@ -69,6 +76,7 @@ export class ErradicaransiedadPage implements OnInit {
                 //inicializar lista de videos 
                 // this.cloud.getVideos(section.id_seccion);
                 this.navCtrl.navigateForward("/main/ejerc-corporales/" + section.id_seccion);
+								this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "4", "id_objeto": section.id_seccion});
             }, (error) => {
                 console.info("[Error]: " + JSON.stringify(error));
             });
