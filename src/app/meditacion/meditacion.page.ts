@@ -22,6 +22,7 @@ export class MeditacionPage implements OnInit {
   goTo(page) {
       switch (page) {
           case 'reto_7_dias':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/Reto_de_7_dias_de_meditacion.jpg");
               localStorage.setItem("section_name", "<b>Reto de 7 días de meditación</b><br/>Reencontrándote con tus raíces");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-reto-7dias.svg");
               this.getIdSection("Reto 7 días meditación").then((res:any) => {
@@ -33,6 +34,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case 'triangulo':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/Triangulo_del_exito.jpg");
               localStorage.setItem("section_name", "<br>El triángulo del éxito</br>");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-triangulo-exito.svg");
               this.getIdSection("El triángulo del éxito").then((res:any) => {
@@ -44,6 +46,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case '4meditacion':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/4_meditaciones.jpg");
               localStorage.setItem("section_name", "<b>4 meditaciones</b> <br/>para transformar tu vida");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-4-meditaciones.svg");
               this.getIdSection("4 meditaciones para transformar tu vida").then((res:any) => {
@@ -55,6 +58,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case 'iniciacion':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/Iniciacion_a_la_meditacion_back.jpg");
               localStorage.setItem("section_name", "<b>Iniciación a la meditación</b>");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-iniciacion.svg");
               this.getIdSection("Iniciación a la meditación").then((res:any) => {
@@ -66,6 +70,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case 'ansiedad_estres':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/Ansiedad_estres_y_depresion.jpg");
               localStorage.setItem("section_name", "<b>Ansiedad, estrés y depresión</b>");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-ansiedad-estres.svg");
               this.getIdSection("Ansiedad, estrés y depresión").then((res:any) => {
@@ -77,6 +82,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case 'salud_plena':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/Salud_plena.jpg");
               localStorage.setItem("section_name", "<b>Salud plena</b>");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-salud-plena.svg");
               this.getIdSection("Salud plena").then((res:any) => {
@@ -88,6 +94,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case 'exito_realizacion':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/exito_y_realizacion.jpg");
               localStorage.setItem("section_name", "<b>Éxito y realización</b>");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-exito-realizacion.svg");
               this.getIdSection("Éxito y realización").then((res:any) => {
@@ -99,6 +106,7 @@ export class MeditacionPage implements OnInit {
               });
               break;
           case 'sueño_dia_perfecto':
+							localStorage.setItem("background_img", "/assets/CATEGORIAS/meditacion/Sueño_y_dia_perfecto.jpg");
               localStorage.setItem("section_name", "<b>Sueño y día perfecto</b>");
               localStorage.setItem("section_icon", "/assets/ICONS/icon-suenho-dia-p.svg");
               this.getIdSection("Sueño y día perfecto").then((res:any) => {

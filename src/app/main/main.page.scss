@@ -2,37 +2,54 @@ ion-avatar {
   width: 100%;
   height: auto;
 }
-ion-icon {
-  font-size: 1vw;
-}
 .icn_clicked {
-  color: var(--main-color);
-  stroke: var(--main-color);
-  font-size: calc(1em + 10vw);
-  margin-top: -15px;
+  font-size: calc(1em + 5vw);
+	margin-bottom: -5px;
 }
 .icn_normal {
-  color: #424242;
-  stroke: #424242;
-  font-size: calc(1em + 7vw);
-  margin-top: 0;
+   font-size: calc(1em + 3vw);
+	margin-bottom: -20px;
+}
+.pl-5vw{
+	padding-left: 5vw;
+}
+.pr-5vw{
+	padding-right: 5vw;
+}
+.pl-1vw{
+	padding-left: 1vw;
+}
+.pl-2vw{
+	padding-left: 2vw;
+}
+.pl-3vw{
+	padding-left: 3vw;
 }
 ion-tab-bar {
-  contain: none;
+	contain: none;
+	margin-top: -25pt;
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-01.svg") no-repeat center bottom / cover; 
+	background-size: 100vw;
+	border-color: transparent !important;
 }
-.menu-borde-in {
-  background-color: var(--main-color);
-  height: 90px;
-  width: 90px;
-  border-radius: 50px;
-  display: block !important;
-  z-index: 9999 !important;
+ion-tab-button {
+	background: none;
 }
-.menu-borde-out {
-  background-color: transparent;
-  height: 90px;
-  width: 90px;
-  border-radius: 50px;
-  display: block !important;
-  z-index: 9999 !important;
+.tab-bar-img1 {
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-01.svg") no-repeat center bottom / cover; 
+}
+.tab-bar-img2 {
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-02.svg") no-repeat center bottom / cover; 
+}
+.tab-bar-img3 {
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-03.svg") no-repeat center bottom / cover; 
+}
+.tab-bar-img4 {
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-04.svg") no-repeat center bottom / cover; 
+}
+.tab-bar-img5 {
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-05.svg") no-repeat center bottom / cover; 
+}
+.tab-bar-img6 {
+	--background: url("/assets/ICONS/tab-bar-buttons/tab-06.svg") no-repeat center bottom / cover; 
 }

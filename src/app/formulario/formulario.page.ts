@@ -68,25 +68,29 @@ export class FormularioPage implements OnInit {
                     
                     this.http.uploadProfilePic(this.photoProfile, idUser).then(
                        (data) => {
-                           myLoading.dismiss();
-                           this.util.presentToast(res.message, "principal");
-                           console.info(JSON.stringify(data));
+													myLoading.dismiss();
+													this.util.presentToast(res.message, "success");
+													console.info(JSON.stringify(data));
+
+													this.frm_usuario.reset();
+													this.photoProfile = {name: "person.jpg", filepath: "/assets/ICONS/person.jpg", webviewPath: "/assets/ICONS/person.jpg"};
+													this.photoService.photos = this.photoProfile;
+													let interaction = { "id_usuario": res.id_user, "id_tipo_interaccion": "3", "id_objeto": res.id_user };
+													this.util.saveInteraction(interaction); // 3=Registro de usuario 
+													this.navCtrl.navigateForward('/introduccion/'+idUser);
                        },
                        (error2) => {
-                           myLoading.dismiss();
-                           this.util.presentToast(res.message + ", Sin embargo no pudimos cargar su foto", "principal");
-                           console.info("[Error]: Cargando file: " + JSON.stringify(error2));
+													myLoading.dismiss();
+													this.util.presentToast(res.message + ", Sin embargo no pudimos cargar su foto", "success");
+													console.info("[Error]: Cargando file: " + JSON.stringify(error2));
+													this.frm_usuario.reset();
+													this.photoProfile = {name: "person.jpg", filepath: "/assets/ICONS/person.jpg", webviewPath: "/assets/ICONS/person.jpg"};
+													this.photoService.photos = this.photoProfile;
+													let interaction = { "id_usuario": res.id_user, "id_tipo_interaccion": "3", "id_objeto": res.id_user };
+													this.util.saveInteraction(interaction); // 3=Registro de usuario 
+													this.navCtrl.navigateForward('/introduccion/'+idUser);
                        }
                     );
-                    this.frm_usuario.reset();
-                    this.photoProfile = {name: "person.jpg", filepath: "/assets/ICONS/person.jpg", webviewPath: "/assets/ICONS/person.jpg"};
-										this.photoService.photos = this.photoProfile;
-										let interaction = { "id_usuario": res.id_user, "id_tipo_interaccion": "3", "id_objeto": res.id_user };
-										this.util.saveInteraction(interaction); // 3=Registro de usuario 
-
-                    setTimeout(()=>{
-                        this.navCtrl.navigateForward('/introduccion/'+idUser);
-                    }, 3000);
                 }
             },
             (error) => {
@@ -105,7 +109,7 @@ export class FormularioPage implements OnInit {
 
     getPhotoFromGallery() {
         // this.photoProfile = this.photoService.takePicture(this.camara.PictureSourceType.PHOTOLIBRARY);
-        this.photoService.takePicture(this.camara.PictureSourceType.SAVEDPHOTOALBUM);
+        this.photoService.takePicture(this.camara.PictureSourceType.PHOTOLIBRARY);
         this.photoProfile = this.photoService.photos;
     }
 

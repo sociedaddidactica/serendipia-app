@@ -39,7 +39,7 @@ export class OlvidoClavePage implements OnInit {
                     this.util.presentToast(res.message, "danger");
                 } else {
                     this.frm_recovery.reset();
-                    this.util.presentToast(res.message, "principal");
+                    this.util.presentToast(res.message, "success");
                     setTimeout(()=>{
                         this.navCtrl.navigateForward('/sesion');
                     }, 3500);

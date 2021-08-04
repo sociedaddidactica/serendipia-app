@@ -28,6 +28,13 @@ export class ErradicaransiedadPage implements OnInit {
     this.dangerousVideoUrl = 'https://www.youtube.com/embed/' + id;
     this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.dangerousVideoUrl);
   }
+	showVideo(){
+		document.getElementById('vidoPromocional').style.display='block'; 
+		document.getElementById('preimg').style.display='none';
+		this.dangerousVideoUrl += "?autoplay=1";
+		this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.dangerousVideoUrl);
+
+	}
   goBack() {
     this.navCtrl.back();
   }
@@ -46,6 +53,7 @@ export class ErradicaransiedadPage implements OnInit {
             });
             break;
         case 'meditacion':
+						localStorage.setItem("background_img", "/assets/CATEGORIAS/ansiedad/Meditacion-guiada-back.jpg");
             localStorage.setItem("section_name", "Meditación guiada");
             localStorage.setItem("section_icon", "/assets/ICONS/icon-meditacion_guiada.svg");
             this.getIdSection("Meditación guiada").then((res: any) => {
@@ -57,6 +65,7 @@ export class ErradicaransiedadPage implements OnInit {
             });
             break;
         case 'tla':
+						localStorage.setItem("background_img", "/assets/CATEGORIAS/ansiedad/TLA-back.jpg");
             localStorage.setItem("section_name", "Tu lugar apartado <br><b>TLA</b>");
             localStorage.setItem("section_icon", "/assets/ICONS/icon-TLA.svg");
             this.getIdSection("Tu lugar apartado TLA").then((res:any) => {
@@ -88,7 +97,14 @@ export class ErradicaransiedadPage implements OnInit {
   getIdSection(nombre_seccion) {
       return this.http.getIdProductSection(nombre_seccion);
   }
+
+	ionViewWillEnter(){
+		document.getElementById('vidoPromocional').style.display='none'; 
+		document.getElementById('preimg').style.display='block';
+	}
+
   ngOnInit() {
+		
   }
 
 }

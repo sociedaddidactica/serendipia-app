@@ -40,7 +40,10 @@ export class SubSectionPage implements OnInit {
     });
   }
   goSection(id_seccion) {
-      localStorage.setItem("section_name", this.section_name);
+      
+			localStorage.setItem("background_img", "/assets/CATEGORIAS/ansiedad/Audios-semanales-back.jpg");
+			const result = this.play_list.filter(track => track.id_seccion == id_seccion);
+			localStorage.setItem("section_name", result[0].nombre_seccion);
       this.navCtrl.navigateForward("/main/musicplayer/" + id_seccion);
   }
   goBack() {

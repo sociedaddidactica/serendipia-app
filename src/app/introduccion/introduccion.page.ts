@@ -41,7 +41,7 @@ export class IntroduccionPage implements OnInit {
             if (res.error){
                 this.util.presentToast(res.message, "danger");
             } else {
-                this.util.presentToast(res.message, "principal");
+                this.util.presentToast(res.message, "success");
                 setTimeout(()=>{
                     this.navCtrl.navigateForward('/subinicio');
                 }, 3000);

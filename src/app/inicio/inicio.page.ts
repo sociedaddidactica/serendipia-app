@@ -27,8 +27,6 @@ export class InicioPage implements OnInit {
 		this.ready = false;
 		this.checkVersionApp();
 		this.clearStorage();
-    // this.checkVersionApp();
-    //this.checkConexion();
   }
 
   goTo() {
@@ -94,16 +92,10 @@ export class InicioPage implements OnInit {
     }
   }
 
-  checkConexion() {
-      this.util.presentToast("Verificando conexion a internet", "danger");
-  }
-
   async initMultimediaList() {
     this.cloudService.getAudios();
     const vList = await this.cloudService.getVideos("6");
     localStorage.setItem("trackVideoList", JSON.stringify(vList));
-    // localStorage.setItem("trackVideoListBck", JSON.stringify(vList));
-    // this.cloudService.initVideoList();
   }
   
   ionViewDidEnter() {

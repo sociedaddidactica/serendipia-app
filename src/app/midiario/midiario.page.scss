@@ -1,15 +1,28 @@
+.div-header {
+  background: linear-gradient(to right, #04c1cc, #29a6d1);
+  height: 30%;
+  margin-bottom: -25%;
+  border: none !important;
+  border-bottom-color: transparent !important;
+  border-bottom: none !important;
+  border-radius: 0px 0px 40px 40px;
+  display: flex;
+}
+.div-header h1 {
+  justify-content: center !important;
+  text-align: center;
+  padding-top: 17%;
+  color: white;
+  width: 100%;
+}
+
 ion-item {
   --ion-background-color: white !important;
   margin: 0 0 5% 0;
 }
-.img-header {
-  width: 50%;
-  height: 50%;
-}
-.grid-header {
-  height: 10% !important;
-}
+
 .grid-central {
+	padding: 8vh 4vw;
   width: 55vw;
 }
 .row-titulo {
@@ -21,7 +34,7 @@ ion-item {
   width: 100%;
 }
 ion-card {
-  --background: #413b3b7e;
+  --background: #252525de;
   border-color: var(--main-color);
   border-width: 0.1em;
   border-style: solid;
@@ -47,11 +60,12 @@ ion-card ion-card-title {
 ion-card ion-card-title ion-text {
   margin: 0 auto;
 }
+
 @media (-webkit-min-device-pixel-ratio: 0.75),
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-ldpi.jpg") no-repeat center
+    --background: url("/assets/MIDIARIO/background-ldpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -59,7 +73,7 @@ ion-card ion-card-title ion-text {
   (-webkit-min-device-pixel-ratio: 1.6666666666666667),
   (min-resolution: 160dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-mdpi.jpg") no-repeat center
+    --background: url("/assets/MIDIARIO/background-mdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -67,7 +81,7 @@ ion-card ion-card-title ion-text {
   (-webkit-min-device-pixel-ratio: 2.21875),
   (min-resolution: 213dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-tvdpi.jpg") no-repeat center
+    --background: url("/assets/MIDIARIO/background-tvdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -75,7 +89,7 @@ ion-card ion-card-title ion-text {
   (-webkit-min-device-pixel-ratio: 2.5),
   (min-resolution: 240dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-hdpi.jpg") no-repeat center
+    --background: url("/assets/MIDIARIO/background-hdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -83,7 +97,7 @@ ion-card ion-card-title ion-text {
   (-webkit-min-device-pixel-ratio: 3.3333333333333335),
   (min-resolution: 320dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-xhdpi.jpg") no-repeat center
+    --background: url("/assets/MIDIARIO/background-xhdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -91,7 +105,7 @@ ion-card ion-card-title ion-text {
   (-webkit-min-device-pixel-ratio: 5),
   (min-resolution: 480dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-xxhdpi.jpg") no-repeat center
+    --background: url("/assets/MIDIARIO/background-xxhdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -99,7 +113,7 @@ ion-card ion-card-title ion-text {
   (-webkit-min-device-pixel-ratio: 6.666666666666667),
   (min-resolution: 640dpi) {
   ion-content {
-    --background: url("/assets/MIDIARIO/background-xxxhdpi.jpg") no-repeat
+    --background: url("/assets/MIDIARIO/background-xxxhdpi/1.jpg") no-repeat
       center center / cover;
   }
 }

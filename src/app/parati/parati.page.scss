@@ -11,7 +11,7 @@
 .div-header h1 {
   justify-content: center !important;
   text-align: center;
-  padding-top: 5%;
+  padding-top: 17%;
   color: white;
   width: 100%;
 }
@@ -20,31 +20,34 @@ ion-avatar {
   height: auto;
 }
 ion-grid {
-  --ion-grid-padding-xs: 5%;
+	padding: 6vh 4vw;
 }
 .card-1 {
-  --background: url("/assets/PARATI/iniciacion_meditacion.jpg") no-repeat center center / cover;
+  --background: url("/assets/PARATI/iniciacion_a_la_meditacion.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .card-2 {
-  --background: url("/assets/PARATI/eliminar_ansiedad.jpg") no-repeat center center / cover;
+  --background: url("/assets/PARATI/metodo_para_erradicar_la_ansiedad.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .card-3 {
-  --background: url("/assets/PARATI/card-3.png") no-repeat center center / cover;
+  --background: url("/assets/PARATI/salud_plena.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .card-4 {
-  --background: url("/assets/PARATI/miedo_rechazo.jpg") no-repeat center center / cover;
+  --background: url("/assets/PARATI/miedo_al_rechazo.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .card-5 {
-  --background: url("/assets/PARATI/triangulo_del_exito.jpg") no-repeat center center / cover;
-  border-radius: 15px;
+  --background: url("/assets/PARATI/el_triangulo_del_exito.png") no-repeat center center / cover;
+   border-radius: 15px;
 }
 .card-6 {
-  --background: url("/assets/PARATI/dejando_de_fumar.jpg") no-repeat center center / cover;
+  --background: url("/assets/PARATI/dejar_de_fumar.png") no-repeat center center / cover;
   border-radius: 15px;
+}
+ion-card {
+	box-shadow: 3px 3px 15px #302f2f;
 }
 ion-card ion-card-content {
   height: 28vh;
@@ -54,54 +57,45 @@ ion-card ion-card-content div {
   text-align: left;
   color: white;
   position: absolute;
-  bottom: 10px;
+  bottom: 2px;
 }
 ion-card ion-card-content div p {
-  font-size: 9px !important;
+  font-size: 0.9em !important;
 }
-.background {
-  background-color: #dce8ef;
-  color: var(--main-color);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0px 5px;
-  margin-left: -5px;
-  border-radius: 5px;
-  font-weight: bold;
-}
+
 @media (-webkit-min-device-pixel-ratio: 0.75),  (-webkit-min-device-pixel-ratio: 1.25),  (min-resolution: 120dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-ldpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-ldpi/0.jpg") no-repeat center center / cover;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 1), (-webkit-min-device-pixel-ratio: 1.6666666666666667), (min-resolution: 160dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-mdpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-mdpi/0.jpg") no-repeat center center / cover;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 1.33),  (-webkit-min-device-pixel-ratio: 2.21875),  (min-resolution: 213dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-tvdpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-tvdpi/0.jpg") no-repeat center center / cover;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 1.5),  (-webkit-min-device-pixel-ratio: 2.5),  (min-resolution: 240dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-hdpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-hdpi/0.jpg") no-repeat center center / cover;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2),  (-webkit-min-device-pixel-ratio: 3.3333333333333335),  (min-resolution: 320dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-xhdpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-xhdpi/0.jpg") no-repeat center center / cover;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 3),  (-webkit-min-device-pixel-ratio: 5),  (min-resolution: 480dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-xxhdpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-xxhdpi/0.jpg") no-repeat center center / cover;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 4),  (-webkit-min-device-pixel-ratio: 6.666666666666667),  (min-resolution: 640dpi) {
   ion-content {
-    --background: url("/assets/PARATI/background-xxxhdpi.jpg") no-repeat center center / cover;
+    --background: url("/assets/PARATI/background-xxxhdpi/0.jpg") no-repeat center center / cover;
   }
 }
+

@@ -108,10 +108,6 @@ export class HablapositivoPage implements OnInit {
       this.diaSelected = moment(event.time).format("DD/MM/YYYY");
 			this.dateSelected = moment(event.time).format("YYYY-MM-DD");
     }
-		
-    // let hoy = moment();
-    // let time_sel = moment(event.time);
-		// let date_selected = time_sel.format("YYYY-MM-DD");
     this.getMessageOfDay(this.dateSelected);
   }
 

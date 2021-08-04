@@ -1,7 +1,3 @@
-ion-content {
-    --background: url("/assets/INTRODUCCION/inicio.jpg") no-repeat center center / cover;
-}
-
 ion-item {
     --ion-background-color: white !important;
     margin: 0 0 5% 0;
@@ -46,8 +42,9 @@ ion-checkbox{
     margin-left: 5%;
 }
 ion-label{
+		font-size: 1.2em !important;
     color: white !important;
-    opacity: .255;
+    opacity: 0.5;
 }
 .btn-turquesa{
     color: black !important;
@@ -84,4 +81,54 @@ ion-label{
 
 ion-text p {
     text-align: justify;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-ldpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-mdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-tvdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-hdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-xhdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-xxhdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-xxxhdpi/3.jpg") no-repeat center center / cover;
+  }
 }

@@ -1,6 +1,6 @@
 .div-header {
   background: linear-gradient(to right, #04c1cc, #29a6d1);
-  height: 30vh;
+  height: 30%;
   margin-bottom: -7vh;
   border: none !important;
   border-bottom-color: transparent !important;
@@ -11,58 +11,59 @@
 .div-header h1 {
   justify-content: center !important;
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 17%;
   color: white;
   width: 100%;
 }
 .ion-card-1 {
-  --background: url("/assets/MUSICA/1.png") no-repeat center center / cover;
+  --background: url("/assets/MUSICA/concentracion.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .ion-card-2 {
-  --background: url("/assets/MUSICA/2.png") no-repeat center center / cover;
+  --background: url("/assets/MUSICA/encuentra_el_sueño.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .ion-card-3 {
-  --background: url("/assets/MUSICA/3.png") no-repeat center center / cover;
+  --background: url("/assets/MUSICA/naturaleza.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .ion-card-4 {
-  --background: url("/assets/MUSICA/4.png") no-repeat center center / cover;
+  --background: url("/assets/MUSICA/relajante.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .ion-card-5 {
-  --background: url("/assets/MUSICA/5.png") no-repeat center center / cover;
+  --background: url("/assets/MUSICA/soñar_despierto.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 .ion-card-6 {
-  --background: url("/assets/MUSICA/6.png") no-repeat center center / cover;
+  --background: url("/assets/MUSICA/trabajo.png") no-repeat center center / cover;
   border-radius: 15px;
 }
 ion-card ion-card-content {
   height: 15vh;
 }
 ion-card ion-card-title {
-  height: 6vh;
-  background-color: #dce8ef;
-  color: black;
-  font-weight: bold;
-  text-align: center;
+	padding-top: 0.5em;
+  height: 4vh;
+  background-color: transparent;
+  color: white;
+  text-align: left;
   font-size: 1.1em;
   display: flex;
-  align-items: center;
+  // align-items: left;
 }
 ion-card ion-card-title ion-text {
-  margin: 0 auto;
+  	margin: 0 10px;
 }
 ion-grid {
   width: 90vw;
 }
+
 @media (-webkit-min-device-pixel-ratio: 0.75),
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-ldpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-ldpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -70,7 +71,7 @@ ion-grid {
   (-webkit-min-device-pixel-ratio: 1.6666666666666667),
   (min-resolution: 160dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-mdpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-mdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -78,7 +79,7 @@ ion-grid {
   (-webkit-min-device-pixel-ratio: 2.21875),
   (min-resolution: 213dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-tvdpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-tvdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -86,7 +87,7 @@ ion-grid {
   (-webkit-min-device-pixel-ratio: 2.5),
   (min-resolution: 240dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-hdpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-hdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -94,7 +95,7 @@ ion-grid {
   (-webkit-min-device-pixel-ratio: 3.3333333333333335),
   (min-resolution: 320dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-xhdpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-xhdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -102,7 +103,7 @@ ion-grid {
   (-webkit-min-device-pixel-ratio: 5),
   (min-resolution: 480dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-xxhdpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-xxhdpi/1.jpg") no-repeat center
       center / cover;
   }
 }
@@ -110,7 +111,7 @@ ion-grid {
   (-webkit-min-device-pixel-ratio: 6.666666666666667),
   (min-resolution: 640dpi) {
   ion-content {
-    --background: url("/assets/MUSICA/background-xxxhdpi.jpg") no-repeat center
+    --background: url("/assets/MUSICA/background-xxxhdpi/1.jpg") no-repeat center
       center / cover;
   }
 }

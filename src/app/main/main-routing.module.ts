@@ -20,7 +20,7 @@ const routes: Routes = [
         {
           path: 'erradicaransiedad',
           loadChildren: () => import('../erradicaransiedad/erradicaransiedad.module').then( m => m.ErradicaransiedadPageModule),
-					data: { preload: false },
+					data: { preload: true },
         },
         {
           path: 'sub-section/:idFather',
@@ -48,11 +48,6 @@ const routes: Routes = [
           path: 'musicplayer/:idSection',
           loadChildren: () => import('../musicplayer/musicplayer.module').then( m => m.MusicplayerPageModule),
 					data: { preload: true },
-        },
-        {
-          path: 'musicplayer-dark/:idSection',
-          loadChildren: () => import('../musicplayer-dark/musicplayer-dark.module').then( m => m.MusicplayerDarkPageModule),
-					data: { preload: false },
         },
         {
           path: 'musica',

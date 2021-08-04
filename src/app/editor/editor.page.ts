@@ -69,7 +69,7 @@ export class EditorPage implements OnInit {
           this.util.presentToast(res.message, "danger");
         } else {
           myLoading.dismiss();  
-          this.util.presentToast(res.message, "principal");
+          this.util.presentToast(res.message, "success");
           setTimeout(()=>{
             this.router.navigate(['/main/cuaderno']);
           }, 2000);
@@ -97,7 +97,7 @@ export class EditorPage implements OnInit {
         this.util.presentToast(res.message, "danger");
       } else {
         myLoading.dismiss();  
-        this.util.presentToast(res.message, "principal");
+        this.util.presentToast(res.message, "success");
         setTimeout(()=>{
           this.router.navigate(['/main/cuaderno']);
         }, 2000);
@@ -129,7 +129,6 @@ export class EditorPage implements OnInit {
           cssClass: 'danger',
           role: 'cancel',
           handler: () => {
-            // this.getPhotoFromGallery();
           }
         }
       ]

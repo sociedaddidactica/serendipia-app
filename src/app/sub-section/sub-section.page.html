@@ -20,12 +20,13 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col>
-          <ion-card class="card-audio">
-            <ion-card-content>
+						<div class="card-audio">
               <ion-list *ngIf="play_list.length">
                 <ng-container *ngFor="let subSection of play_list; let i = index">
-                  <ion-item-divider class="items-track">
-                    <ion-button slot="start" (click)="goSection(subSection.id_seccion)">
+                  <ion-item-divider [ngClass]="{'items-track-start': i==0, 
+																								'items-track': i>0,
+																								'items-track-end': i==play_list.length-1}" (click)="goSection(subSection.id_seccion)">
+                    <ion-button slot="start" >
                       <ion-icon [src]="this.subsection_icon"></ion-icon>
                     </ion-button>
                     <p>
@@ -34,8 +35,7 @@
                   </ion-item-divider>
                 </ng-container>
               </ion-list>
-            </ion-card-content>
-          </ion-card>
+						</div>
         </ion-col>
       </ion-row>
     </ion-grid>

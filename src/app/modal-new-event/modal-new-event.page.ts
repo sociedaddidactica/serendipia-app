@@ -98,7 +98,7 @@ export class ModalNewEventPage implements OnInit {
 				myLoading.dismiss();
 				this.util.presentToast(res.message, "danger");
 			} else {
-				this.util.presentToast(res.message, "principal");
+				this.util.presentToast(res.message, "success");
 				myLoading.dismiss();
 				this.modalCtrl.dismiss(res);
 			}
@@ -124,7 +124,7 @@ export class ModalNewEventPage implements OnInit {
         this.util.presentToast(res.message, "danger");
       } else {
         myLoading.dismiss();  
-        this.util.presentToast(res.message, "principal");
+        this.util.presentToast(res.message, "success");
         this.modalCtrl.dismiss(res);
       }
     },

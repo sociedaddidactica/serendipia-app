@@ -1,22 +1,15 @@
-ion-content {
-  --background: #424242;
-}
 .div-top {
   background: linear-gradient(to right, #04c1cc, #29a6d1);
-  height: 70%;
-  margin-bottom: -30%;
+  height: 30vh;
   border: none !important;
   display: flex;
   text-align: center;
+	border-radius:  0px 0px 50px 50px;
 }
 .div-top h1 {
   color: white;
-  font-size: large;
-  padding-bottom: 15px;
   vertical-align: top;
-  height: 100%;
   margin-top: 10px !important;
-  width: 80%;
 }
 .back-button {
   --background: transparent !important;
@@ -25,10 +18,8 @@ ion-content {
   z-index: 2000;
 }
 iframe {
-  width: 70%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: 80vw;
+	height:45vw;
   border-radius: 10px;
   box-shadow: 2px 2px 5px #424242;
 }
@@ -36,12 +27,10 @@ ion-row {
   align-items: top;
 }
 .div-bottom {
-  background: #424242;
-  height: 40%;
+  height: 62vh;
   border: none !important;
   border-top-color: transparent !important;
   border-top: none !important;
-  border-radius: 50px 50px 0px 0px;
   display: flex;
   text-align: center;
 }
@@ -51,16 +40,12 @@ ion-row {
   vertical-align: middle;
 }
 .div-bottom ion-grid {
-  margin-block-start: -10%;
+  margin-block-start: -8vh;
 }
 .div-bottom ion-card {
-  width: 70%;
-  height: 75%;
+  width: 80%;
+  height: 80%;
   border-radius: 7px;
-}
-.div-bottom ion-card ion-card-content {
-  padding-top: 5px;
-  margin-bottom: 15px;
 }
 .card-left {
   margin-right: -20px;
@@ -70,6 +55,38 @@ ion-row {
 }
 .card-bottom ion-col {
   margin-top: -20px;
+}
+ion-card {
+	box-shadow: 3px 3px 15px #302f2f;
+}
+ion-card ion-card-content {
+  height: 24vh;
+  position: relative;
+}
+ion-card ion-card-content div {
+  text-align: left;
+  color: white;
+  position: absolute;
+	bottom: 4vh;
+}
+ion-card ion-card-content div p {
+  font-size: 0.9em !important;
+}
+.card-1 {
+  --background: url("/assets/CATEGORIAS/ansiedad/Audios-semanales.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-2 {
+  --background: url("/assets/CATEGORIAS/ansiedad/Meditacion-guiada.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-3 {
+  --background: url("/assets/CATEGORIAS/ansiedad/TLA.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-4 {
+  --background: url("/assets/CATEGORIAS/ansiedad/Ejercicios-corporales.png") no-repeat center center / cover;
+  border-radius: 15px;
 }
 .item-menu {
   padding-top: 10px;
@@ -87,4 +104,54 @@ ion-row {
 .item-menu ion-icon {
   color: white;
   font-size: 56px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-ldpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-mdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-tvdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-hdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-xhdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-xxhdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-xxxhdpi/0.jpg") no-repeat center center / cover;
+  }
 }

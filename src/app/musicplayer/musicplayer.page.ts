@@ -17,7 +17,7 @@ import * as moment from 'moment';
 })
 
 export class MusicplayerPage implements OnInit {
-	id_user: string; 
+	id_user: string;
   section_name: string;
   section_icon: string;
   file: { url: string; name: string; duration: number; };
@@ -27,20 +27,25 @@ export class MusicplayerPage implements OnInit {
   currentFile: any = {};
   current_track_title: string;
   show_toolbar: boolean;
+	show_play_list: boolean;
   id_section: any;
   onSeekState: any;
-    
-  constructor(private navCtrl: NavController, 
-              private platform: Platform, 
-              private util: UtilsService, 
-              private route: ActivatedRoute, 
-              private audioService: AudioService, 
-              private cloudService: CloudService, 
-              private store: Store<any>) { 
+	name_background: string;
+
+  constructor(private navCtrl: NavController,
+              private platform: Platform,
+              private util: UtilsService,
+              private route: ActivatedRoute,
+              private audioService: AudioService,
+              private cloudService: CloudService,
+              private store: Store<any>) {
 
 		this.id_user = localStorage.getItem("id_usuario");
     this.section_name = localStorage.getItem("section_name");
     this.section_icon = localStorage.getItem("section_icon");
+		let nb = localStorage.getItem("background_img");
+		this.name_background = nb ;
+
     this.file = {
         url: "",
         name: "",
@@ -52,6 +57,7 @@ export class MusicplayerPage implements OnInit {
     this.currentFile = {};
     this.current_track_title = '';
     this.show_toolbar = false;
+		this.show_play_list = true;
     this.files.splice(0, this.files.length);
     this.id_section = this.route.snapshot.paramMap.get('idSection');
   }
@@ -62,30 +68,37 @@ export class MusicplayerPage implements OnInit {
       myLoading.dismiss();
     });
   }
-  
+
   goBack() {
-    this.navCtrl.back();
+		if (this.show_toolbar){
+			this.show_toolbar = false;
+			this.show_play_list = true;
+			this.reset();	
+		} else {
+			this.navCtrl.back();
+		}
   }
-  
+
   ionViewWillEnter() {
     this.store.select('appState').subscribe((value) => {
         this.state = value;
         this.seekbar = value.timeSec;
     });
   }
-  
+
   resetState() {
     if (this.state.playing){
       this.audioService.stop();
       this.store.dispatch({ type: RESET });
     }
   }
-  
+
   playStream(url, loader) {
-    
+
     this.resetState();
     this.audioService.playStream(url).subscribe(event => {
       const audioObj = event.target;
+			
       switch (event.type) {
           case 'canplay':
               return this.store.dispatch({ type: CANPLAY, payload: { value: true } });
@@ -118,6 +131,11 @@ export class MusicplayerPage implements OnInit {
               });
           case 'loadstart':
               return this.store.dispatch({ type: LOADSTART, payload: { value: true } });
+					case 'ended':
+						if (!this.isLastPlaying()){
+							this.next();
+						} 
+						break;
       }
       loader.dismiss();
     }, error => {
@@ -134,6 +152,7 @@ export class MusicplayerPage implements OnInit {
 		this.util.saveInteraction({"id_usuario": this.id_user, "id_tipo_interaccion": "5", "id_objeto": file.id_prod});
     if (!this.show_toolbar) {
         this.show_toolbar = true;
+				this.show_play_list = false;
     }
   }
 
@@ -209,6 +228,7 @@ export class MusicplayerPage implements OnInit {
     this.resetState();
     this.currentFile = {};
     this.show_toolbar = false;
+		this.show_play_list= true;
   }
 
   formatTime(time, format) {
@@ -220,10 +240,11 @@ export class MusicplayerPage implements OnInit {
     let myLoading = await this.util.presentLoading();
     this.cloudService.initList(this.id_section);
     this.getDocuments(myLoading);
+
+
   }
 
   ngOnDestroy() {
-    console.info("onDestroy");
     this.reset();
     // this.util.loadtCtrl.dismiss();
   }

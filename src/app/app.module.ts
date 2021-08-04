@@ -1,4 +1,5 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { File } from '@ionic-native/file/ngx';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +13,7 @@ import { HttpService } from './services/http/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { pageTransition } from './page-transition';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
@@ -46,8 +48,10 @@ import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2/ngx';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: LOCALE_ID, useValue: 'es-ES' },
-    HttpService,
+    File,
+		HttpService,
     WebView, 
+		FilePath,
     FileTransfer,
     Camera, 
     Crop,

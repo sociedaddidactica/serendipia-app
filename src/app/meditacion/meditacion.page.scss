@@ -1,22 +1,15 @@
-ion-content {
-  --background: #424242;
-}
 .div-top {
   background: linear-gradient(to right, #04c1cc, #29a6d1);
-  height: 70%;
-  margin-bottom: -30%;
+  height: 30vh;
   border: none !important;
   display: flex;
   text-align: center;
+	border-radius:  0px 0px 50px 50px;
 }
 .div-top h1 {
   color: white;
-  font-size: large;
-  padding-bottom: 15px;
   vertical-align: top;
-  height: 100%;
-  margin-top: 10px !important;
-  width: 80%;
+  margin-top: 5vh !important;
 }
 .back-button {
   --background: transparent !important;
@@ -28,12 +21,10 @@ ion-row {
   align-items: top;
 }
 .div-bottom {
-  background: #424242;
-  height: 40%;
+  height: 65vh;
   border: none !important;
   border-top-color: transparent !important;
   border-top: none !important;
-  border-radius: 50px 50px 0px 0px;
   display: flex;
   text-align: center;
 }
@@ -41,27 +32,65 @@ ion-row {
   justify-content: center !important;
   display: flex;
   vertical-align: middle;
+	padding: 15px;
 }
 .div-bottom ion-grid {
-  margin-block-start: -60%;
+  margin-block-start: -12vh;
 }
-.div-bottom ion-card {
-  width: 85%;
-  height: 75%;
-  border-radius: 7px;
+
+ion-card {
+	box-shadow: 3px 3px 15px #302f2f;
 }
-.div-bottom ion-card ion-card-content {
-  padding-top: 5px;
-  margin-bottom: 15px;
-  padding-left: -5px;
-  padding-right: -5px;
-  font-size: 12px;
-  color: black;
+ion-card ion-card-content {
+  height: 20vh;
+	width: 35vw;
+  position: relative;
+	padding: 5px;
 }
-.div-bottom ion-card small {
-  margin: 0 -5vw;
-  font-size: 0.65em;
+
+ion-card ion-card-content div {
+  text-align: left;
+  color: white;
+  position: absolute;
+	bottom: 4px;
 }
+ion-card ion-card-content div p {
+  font-size: 0.9em !important;
+}
+
+.card-1 {
+  --background: url("/assets/CATEGORIAS/meditacion/Iniciacion_a_la_meditacion.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-2 {
+  --background: url("/assets/CATEGORIAS/meditacion/Reto_de_7_dias_de_meditacion.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-3 {
+  --background: url("/assets/CATEGORIAS/meditacion/Triangulo_del_exito.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-4 {
+  --background: url("/assets/CATEGORIAS/meditacion/4_meditaciones.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-5 {
+  --background: url("/assets/CATEGORIAS/meditacion/Ansiedad_estres_y_depresion.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-6 {
+  --background: url("/assets/CATEGORIAS/meditacion/Salud_plena.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-7 {
+  --background: url("/assets/CATEGORIAS/meditacion/exito_y_realizacion.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-8 {
+  --background: url("/assets/CATEGORIAS/meditacion/Sueño_y_dia_perfecto.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+
 .card-left {
   margin-right: -10px;
 }
@@ -87,4 +116,54 @@ ion-row {
 .item-menu ion-icon {
   color: white;
   font-size: 56px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-ldpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-mdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-tvdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-hdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-xhdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-xxhdpi/0.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/meditacion/background-xxxhdpi/0.jpg") no-repeat center center / cover;
+  }
 }

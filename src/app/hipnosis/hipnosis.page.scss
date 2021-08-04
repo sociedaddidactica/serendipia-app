@@ -1,22 +1,15 @@
-ion-content {
-  --background: #424242;
-}
 .div-top {
-  background: linear-gradient(to right, #04c1cc, #29a6d1);
-  height: 70%;
-  margin-bottom: -30%;
+	background: linear-gradient(to right, #04c1cc, #29a6d1);
+  height: 30vh;
   border: none !important;
   display: flex;
   text-align: center;
+	border-radius:  0px 0px 50px 50px;
 }
 .div-top h1 {
   color: white;
-  font-size: large;
-  padding-bottom: 15px;
   vertical-align: top;
-  height: 100%;
-  margin-top: 10px !important;
-  width: 80%;
+  margin-top: 5vh !important;
 }
 .back-button {
   --background: transparent !important;
@@ -28,12 +21,10 @@ ion-row {
   align-items: top;
 }
 .div-bottom {
-  background: #424242;
-  height: 40%;
+  height: 65vh;
   border: none !important;
   border-top-color: transparent !important;
   border-top: none !important;
-  border-radius: 50px 50px 0px 0px;
   display: flex;
   text-align: center;
 }
@@ -43,12 +34,13 @@ ion-row {
   vertical-align: middle;
 }
 .div-bottom ion-grid {
-  margin-block-start: -60%;
+  margin-block-start: -12vh;
 }
 .div-bottom ion-card {
   width: 85%;
   height: 75%;
   border-radius: 7px;
+	box-shadow: 3px 3px 15px #302f2f;
 }
 .div-bottom ion-card ion-card-content {
   padding-top: 5px;
@@ -56,10 +48,45 @@ ion-row {
   padding-left: -5px;
   padding-right: -5px;
   font-size: 12px;
-  color: black;
+	height: 20vh;
 }
-.div-bottom ion-card small {
-  font-size: 8px;
+ion-card ion-card-content div {
+  text-align: left;
+  color: white;
+  position: absolute;
+	bottom: 15px;
+}
+ion-card ion-card-content div p {
+  font-size: 0.9em !important;
+}
+
+.card-1 {
+  --background: url("/assets/CATEGORIAS/hipnosis/transformando_lo_desconocido_en_conocido_y_lo_conocidoen_desconocido.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-2 {
+  --background: url("/assets/CATEGORIAS/hipnosis/soy_necesario_(exito_total).png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-3 {
+  --background: url("/assets/CATEGORIAS/hipnosis/eliminando_la_ansiedad_de_comer.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-4 {
+  --background: url("/assets/CATEGORIAS/hipnosis/dejar_de_fumar.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-5 {
+  --background: url("/assets/CATEGORIAS/hipnosis/dependencia_sentimental.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-6 {
+  --background: url("/assets/CATEGORIAS/hipnosis/miedo_al_rechazo.png") no-repeat center center / cover;
+  border-radius: 15px;
+}
+.card-7 {
+  --background: url("/assets/CATEGORIAS/hipnosis/haciendome_inmune_a_las_criticas.png") no-repeat center center / cover;
+  border-radius: 15px;
 }
 .card-left {
   margin-right: -10px;
@@ -86,4 +113,54 @@ ion-row {
 .item-menu ion-icon {
   color: white;
   font-size: 56px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-ldpi/4.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-mdpi/4.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-tvdpi/4.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-hdpi/4.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-xhdpi/4.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-xxhdpi/4.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/hipnosis/background-xxxhdpi/4.jpg") no-repeat center center / cover;
+  }
 }

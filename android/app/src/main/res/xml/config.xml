@@ -11,8 +11,17 @@
     <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
   </feature>
 
+  <feature name="Camera">
+    <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
+  </feature>
+
   <feature name="File">
     <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
+    <param name="onload" value="true"/>
+  </feature>
+
+  <feature name="FilePath">
+    <param name="android-package" value="com.hiddentao.cordova.filepath.FilePath"/>
     <param name="onload" value="true"/>
   </feature>
 
@@ -35,10 +44,6 @@
 
   <feature name="YoutubeVideoPlayer">
     <param name="android-package" value="com.bunkerpalace.cordova.YoutubeVideoPlayer"/>
-  </feature>
-
-  <feature name="Camera">
-    <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
   </feature>
 
   <feature name="CropPlugin">

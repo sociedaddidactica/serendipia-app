@@ -20,15 +20,14 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col>
-          <ion-card class="card-audio">
-            <ion-card-content>
+							<div class="card-audio">
               <ion-list *ngIf="play_list.length">
                 <ng-container *ngFor="let videoclip of play_list; let i = index">
-                  <ion-item-divider class="items-track">
-                    <ion-button slot="start" class="btn-icon" (click)="playYoutubeVideo(videoclip)">
-                      <!-- <ion-button slot="start" class="btn-icon" (click)="goToPlayer(videoclip.ruta_archivo)"> -->
-                      <!-- <ion-icon [src]="this.subsection_icon"></ion-icon> -->
-                      <ion-icon name="play-circle-outline"></ion-icon>
+                  <ion-item-divider [ngClass]="{'items-track-start': i==0, 
+																								'items-track': i>0,
+																								'items-track-end': i==play_list.length-1}"  (click)="playYoutubeVideo(videoclip)">
+                    <ion-button slot="start" class="btn-icon">
+											<ion-icon name="play-circle-outline"></ion-icon>
                     </ion-button>
                     <p>
                       <ion-text color="dark"> {{ videoclip.nombre_producto }} </ion-text>
@@ -36,8 +35,7 @@
                   </ion-item-divider>
                 </ng-container>
               </ion-list>
-            </ion-card-content>
-          </ion-card>
+						</div>
         </ion-col>
       </ion-row>
     </ion-grid>

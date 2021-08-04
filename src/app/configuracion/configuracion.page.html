@@ -1,7 +1,7 @@
 <ion-content>
   <div class="div-top">
 		<ion-fab vertical="top" horizontal="end">
-			<ion-fab-button color="gris-plomo" size="small" (click)="cerrarSesion()"> 
+			<ion-fab-button color="gris-plomo" size="small" (click)="closeSesionConfirm()"> 
 				<ion-icon name="exit-outline"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
@@ -20,7 +20,7 @@
             <ion-col class="align-center">
                 <div class="content-camera">
                     <div class="content-photo">
-                        <img id="profilePic" class="img-perfil"  [src]="photoService.photos.webviewPath">
+                        <img id="profilePic" class="img-perfil"  [src]="DomSanitizer.bypassSecurityTrustUrl(photoService.photos.webviewPath)">
 												<!-- <img id="profilePic" class="img-perfil"  [src]="photoProfile.webviewPath"> -->
                     </div>
                     <ion-fab-button (click)="presentAlertConfirm()" size="small" class="ionfab" color="secondary">

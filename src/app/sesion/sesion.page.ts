@@ -47,7 +47,6 @@ export class SesionPage implements OnInit {
                 localStorage.setItem('sesion', "I");
             }
             else {
-								this.fcm.init();
                 this.frm_login.reset();
                 // Guardo las variables de sesion para la app en LocalStorage
                 localStorage.setItem('id_usuario', res.usuario.id);
@@ -60,6 +59,7 @@ export class SesionPage implements OnInit {
 								localStorage.setItem('fecha_corte', res.fecha_corte);
 								localStorage.setItem('id_grupo_usuario', res.grupos);
                 localStorage.setItem('sesion', "A");
+								this.fcm.init();
                 this.util.updateAccess(res.usuario.id);
 								let interaction = { "id_usuario": res.usuario.id, "id_tipo_interaccion": "1", "id_objeto": res.usuario.id };
 								this.util.saveInteraction(interaction); // 1=Inicio de sesión

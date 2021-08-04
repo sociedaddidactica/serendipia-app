@@ -1,8 +1,5 @@
-ion-content {
-  --background: #424242;
-}
 .div-top {
-  background: linear-gradient(to right, #04c1cc, #29a6d1);
+  background: transparent;
   height: 40vh;
   margin-bottom: -8vh;
   border: none !important;
@@ -25,7 +22,7 @@ ion-content {
   z-index: 2000;
 }
 .div-bottom {
-  background: #424242;
+  background: transparent;
   height: 50vh;
   border: none !important;
   border-top-color: transparent !important;
@@ -43,9 +40,10 @@ ion-content {
   margin-block-start: -7vh;
 }
 .card-audio {
-  width: 90vw;
-  border-radius: 10px;
-  box-shadow: -5px 5px 10px #424242;
+  width: 80vw;
+	ion-list {
+		background: transparent;
+	}
 }
 .btn-icon {
   --background: transparent !important;
@@ -58,26 +56,86 @@ ion-content {
   color: var(--main-color);
   font-size: 56px;
 }
+.items-track-start {
+  padding: 10px;
+	margin-top: 5px;
+	border-radius: 10px 10px 0 0;
+	ion-button {
+		--background: transparent !important;
+  	--border: none !important;
+  	--box-shadow: none !important;
+		width: 5em;
+		height: 5em;
+		text-align: right;
+    padding: 0;
+    margin: 0;
+	}
+	ion-icon {
+		color: var(--main-color);
+		fill: var(--main-color);
+		stroke: var(--main-color);;
+		font-size: 56px;
+		vertical-align: top;
+	}
+	p {
+		text-align: justify;
+		margin-left: 20px;
+	}
+}
 .items-track {
-  padding: 10px 0px;
-  border-bottom: 2px solid;
-  border-color: #cacaca;
+  padding: 10px;
+	margin-top: 5px;
+
+	ion-button {
+		--background: transparent !important;
+  	--border: none !important;
+  	--box-shadow: none !important;
+		width: 5em;
+		height: 5em;
+		text-align: right;
+    padding: 0;
+    margin: 0;
+	}
+	ion-icon {
+		color: var(--main-color);
+		fill: var(--main-color);
+		stroke: var(--main-color);
+		font-size: 56px;
+		vertical-align: top;
+		
+	}
+	p {
+		text-align: justify;
+		margin-left: 20px;
+	}
 }
-.items-track ion-button {
-  --background: var(--main-color);
-  width: 56px;
-  height: 56px;
+.items-track-end {
+  padding: 10px;
+	margin-top: 5px;
+	border-radius: 0 0 10px 10px;
+	ion-button {
+		--background: transparent !important;
+  	--border: none !important;
+  	--box-shadow: none !important;
+		width: 5em;
+		height: 5em;
+		text-align: right;
+    padding: 0;
+    margin: 0;
+	}
+	ion-icon {
+		color: var(--main-color);;
+		fill: var(--main-color);;
+		stroke: var(--main-color);;
+		font-size: 56px;
+		vertical-align: top;
+	}
+	p {
+		text-align: justify;
+		margin-left: 20px;
+	}
 }
-.items-track ion-icon {
-  color: white;
-  fill: white;
-  stroke: white;
-  font-size: 56px;
-  vertical-align: top;
-}
-.items-track p {
-  text-align: justify;
-}
+
 .title-track {
   margin-bottom: 15px;
   text-align: center;
@@ -86,9 +144,59 @@ ion-content {
   margin: 0 auto;
   text-align: center;
   font-size: calc(1em + 10vh);
-  color: white;
+  color: var(--main-color);
 }
 .name-section {
   text-align: center;
   color: white;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-ldpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-mdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-tvdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-hdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-xhdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-xxhdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/CATEGORIAS/ansiedad/background-xxxhdpi/3.jpg") no-repeat center center / cover;
+  }
 }

@@ -3,13 +3,13 @@ ion-content {
 }
 .div-top {
   background: linear-gradient(to right, #04c1cc, #29a6d1);
-  height: 42vh;
-  margin-bottom: -10vh;
+  height: 30%;
   border: none !important;
+	border-radius: 0px 0px 40px 40px;
   display: flex;
   text-align: center;
 	ion-grid {
-		padding-top: 4vh !important;
+		padding-top: 7vh !important;
 	}
 }
 .back-button {
@@ -24,12 +24,11 @@ ion-content {
   border: none !important;
   border-top-color: transparent !important;
   border-top: none !important;
-  border-radius: 75px 75px 0px 0px;
   display: flex;
   text-align: center;
 }
 .div-bottom ion-grid {
-  margin-block-start: -12vh;
+  margin-block-start: -5vh;
 }
 .icon-section {
   margin: 0 auto;
@@ -60,13 +59,9 @@ ion-content {
 }
 .row-avatar{
 	margin-bottom: 5vh;
-	// height:100% !important;
-	// width: 100% !important;
 }
 .content-camera {
 	position: relative;
-	// display: block;
-	
 }
 .content-photo{
 	border: 1px solid var(--main-color)  !important;
@@ -95,22 +90,29 @@ ion-content {
 }
 .custom-ion-input  {
 	width: 100%;
-	border-bottom: 1px solid var(--main-color) !important;
 	color: var(--main-color);
+	padding-bottom: 5px;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,192,200,1) 0%, rgba(2,159,215,1) 60%, rgba(3,128,229,1) 100%) left bottom rgba(134, 132, 132, 0) no-repeat;
+	background-size: 100% 1px;
 }
 .custom-ion-datetime {
 	width: 100%;
-	border-bottom: 1px solid var(--main-color) !important;
-	background-color: transparent !important;
 	color: var(--main-color);
+	padding-bottom: 5px;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,192,200,1) 0%, rgba(2,159,215,1) 60%, rgba(3,128,229,1) 100%) left bottom rgba(134, 132, 132, 0) no-repeat;
+	background-size: 100% 1px;
 }
 .custom-select-opcion,  .custom-ion-select{
-	background-color: transparent !important;
 	color: var(--main-color);
+	padding-bottom: 5px;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,192,200,1) 0%, rgba(2,159,215,1) 60%, rgba(3,128,229,1) 100%) left bottom rgba(134, 132, 132, 0) no-repeat;
+	background-size: 100% 1px;
 }
 .custom-ion-label{
+	font-size: 1.2em !important;
 	color: white !important;
-	opacity: .255;
+	opacity: 0.5;
+	padding-bottom: 1.1em !important;
 }
 .btn-turquesa{
 	color: black !important;
@@ -128,7 +130,6 @@ ion-content {
 	margin-top: 10%;
 }
 a {
-	color: white !important;
 	text-decoration: none;
 }
 .lbl_danger{

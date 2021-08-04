@@ -1,10 +1,6 @@
-ion-content {
-    --background: url("/assets/INTRODUCCION/inicio.jpg") no-repeat center center / cover;
-}
-
 ion-item {
     --ion-background-color: white !important;
-    margin: 0 0 5% 0;
+    margin-bottom: 5px;
 }
 
 .img-header{
@@ -15,7 +11,7 @@ ion-item {
     height: 10% !important;
 }
 .grid-central{
-    width: 65%;
+    width: 80%;
     align-items: center !important;
 }
 .row-titulo{
@@ -38,16 +34,17 @@ ion-avatar{
 
 ion-input {
     width: 100%;
-    border-bottom: 1px solid var(--main-color) !important;
-    color: var(--main-color);
-}
-ion-checkbox{
-    border: 1px solid var(--main-color) !important;
-    margin-left: 5%;
+		color: var(--main-color);
+		padding-bottom: 5px;
+		background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,192,200,1) 0%, rgba(2,159,215,1) 60%, rgba(3,128,229,1) 100%) left bottom rgba(134, 132, 132, 0) no-repeat;
+		background-size: 100% 1px;
+        
 }
 ion-label{
+		font-size: 1.2em !important;
     color: white !important;
-    opacity: .255;
+    opacity: 0.5;
+		padding-bottom: 2em !important;
 }
 .btn-turquesa{
     color: black !important;
@@ -79,5 +76,55 @@ ion-label{
 }
 
 .frm-padding {
-    padding-top: 25%;
+    padding-top: 20%;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0.75),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-ldpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1),
+  (-webkit-min-device-pixel-ratio: 1.6666666666666667),
+  (min-resolution: 160dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-mdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.33),
+  (-webkit-min-device-pixel-ratio: 2.21875),
+  (min-resolution: 213dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-tvdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (-webkit-min-device-pixel-ratio: 2.5),
+  (min-resolution: 240dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-hdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 3.3333333333333335),
+  (min-resolution: 320dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-xhdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 5),
+  (min-resolution: 480dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-xxhdpi/3.jpg") no-repeat center center / cover;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 4),
+  (-webkit-min-device-pixel-ratio: 6.666666666666667),
+  (min-resolution: 640dpi) {
+  ion-content {
+    --background: url("/assets/INTRODUCCION/background-xxxhdpi/3.jpg") no-repeat center center / cover;
+  }
 }

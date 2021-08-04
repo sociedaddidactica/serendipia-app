@@ -3,16 +3,15 @@ ion-content {
 }
 .div-top {
   background: linear-gradient(to right, #04c1cc, #29a6d1);
-  height: 40vh;
-  margin-bottom: -8vh;
+  height: 30%;
   border: none !important;
+	border-radius: 0px 0px 40px 40px;
   display: flex;
   text-align: center;
 	ion-grid {
 		padding-top: 7vh !important;
 	}
 }
-
 .back-button {
   --background: transparent !important;
   --border: none !important;
@@ -25,12 +24,11 @@ ion-content {
   border: none !important;
   border-top-color: transparent !important;
   border-top: none !important;
-  border-radius: 50px 50px 0px 0px;
   display: flex;
   text-align: center;
 }
 .div-bottom ion-grid {
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 
 .div-bottom ion-col {
@@ -41,17 +39,23 @@ ion-content {
   width: 85vw;
   border-radius: 10px;
   box-shadow: -5px 5px 10px #424242;
+	align-items: center;
 
 	ion-card-header {
-		text-align: left;
-		padding: 0.8em 1em 0.4em 1em;
-		ion-card-subtitle{
+		width: 80%;
+		text-align: center;
+		padding: 1em;
+		margin: 0 auto;
+		border-bottom: 2px solid #b3b3b3;
+
+		ion-card-title{
 			font-weight: bold !important;
 		}
 	}
+
 	ion-card-content{
-		text-align: left;
-		padding: 0 1em 0.5em 1em; 
+		text-align: center;
+		padding: 1em; 
 	}
 }
 .btn-icon {
@@ -74,4 +78,21 @@ ion-content {
   text-align: center;
   color: white;
 	font-size: 1.5em;
+}
+.logo {
+	align-items: center;
+
+	ion-img {
+		width: 40vw;
+		height: auto;
+		margin: 0 auto;
+	}
+}
+.btn-sitio {
+	--background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,192,200,1) 0%, rgba(2,159,215,1) 60%, rgba(3,128,229,1) 100%);
+	--border-radius: 7px;
+	text-transform: none;
+	//width: 40vw;
+	height: 9vw;
+	padding-top: 1vh;
 }

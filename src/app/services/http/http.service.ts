@@ -7,6 +7,7 @@ import { Photo } from '../photo/photo.service';
   providedIn: 'root',
 })
 export class HttpService {
+
   
   url_base = 'https://serendipias.app/apirestful_serendipia/v1';
 
@@ -99,7 +100,9 @@ export class HttpService {
     console.info("foto in upload funcion: " + photoProf.filepath);
     const fileTransfer: FileTransferObject = this.transfer.create();
     const url = this.url_base + '/uploadprofilepic';
-    const pictureName = id_user + "_" + photoProf.name;
+    // const pictureName = "pp_" + id_user + ".jpg";
+		const pictureName = id_user + "_" + photoProf.name;
+		
     let options: FileUploadOptions = {
         fileKey: 'file',
         fileName: pictureName,
@@ -386,5 +389,78 @@ export class HttpService {
 
     return this.http.post(url, httpParams, options).toPromise();
   }
+
+	updateTokenFCM(id_usuario, token, platform) {
+    let httpParams = new HttpParams()
+			.append('id_user', id_usuario)
+      .append('token', token)
+			.append('platform', platform);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/updatetokenfcm';
+
+    return this.http.post(url, httpParams, options).toPromise();
+  }
+
+	desactiveToken(id_user) {
+		let httpParams = new HttpParams()
+			.append('id_user', id_user);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/desactivetokenfcm';
+
+    return this.http.post(url, httpParams, options).toPromise();
+	}
+
+	savePurchaseTransaction(datos) {
+    let httpParams = new HttpParams()
+      .append('id_suscripcion', datos.id_suscripcion)
+      .append('id_store', datos.id_store)
+      .append('id_usuario', datos.id_usuario)
+      .append('price', datos.price)
+      .append('currency', datos.currency)
+      .append('transaction_type', datos.transaction_type)
+      .append('transaction_id', datos.transaction_id)
+			.append('transaction_object', datos.transaction_object);
+
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params: httpParams,
+    };
+
+    const url = this.url_base + '/savepurchasetx';
+
+    return this.http.post(url, httpParams, options).toPromise();
+  }
+
+	activeSuscription(id_suscripcion){
+		let httpParams = new HttpParams()
+		.append('id_suscripcion', id_suscripcion);
+
+	const options = {
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		params: httpParams,
+	};
+
+	const url = this.url_base + '/activesuscription';
+
+	return this.http.post(url, httpParams, options).toPromise();
+	}
 
 }
