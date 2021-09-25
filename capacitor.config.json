@@ -17,6 +17,8 @@
     }
   },
   "cordova": {
-    
+		"preferences": {
+      "android-minSdkVersion": "30"
+   }
   }
 }
